@@ -1,0 +1,2443 @@
+2026-06-14 17:47:42 | WARNING  | vector_embedding_service.__init__:31 | DashScope API Key 未配置，Embedding 服务将不可用。请在 .env 中设置 DASHSCOPE_API_KEY。
+2026-06-14 17:47:43 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen-max, streaming=True
+2026-06-14 17:47:43 | INFO     | document_splitter_service.__init__:39 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 17:47:43 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 17:47:43 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 17:47:43 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 17:47:43 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 17:47:51 | WARNING  | vector_embedding_service.__init__:31 | DashScope API Key 未配置，Embedding 服务将不可用。请在 .env 中设置 DASHSCOPE_API_KEY。
+2026-06-14 17:47:51 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen-max, streaming=True
+2026-06-14 17:47:51 | INFO     | document_splitter_service.__init__:39 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 17:47:51 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 17:47:51 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 17:47:51 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 17:47:51 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 17:47:52 | INFO     | main.lifespan:23 | ============================================================
+2026-06-14 17:47:52 | INFO     | main.lifespan:24 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 17:47:52 | INFO     | main.lifespan:25 | 📝 环境: 开发
+2026-06-14 17:47:52 | INFO     | main.lifespan:26 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 17:47:52 | INFO     | main.lifespan:27 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 17:47:52 | INFO     | main.lifespan:30 | 🔌 正在连接 Milvus...
+2026-06-14 17:47:52 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 17:47:52 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 17:47:52 | INFO     | milvus_client.connect:95 | collection 'biz' 不存在，正在创建...
+2026-06-14 17:47:52 | INFO     | milvus_client._create_index:208 | 成功为 vector 字段创建索引
+2026-06-14 17:47:52 | INFO     | milvus_client.connect:97 | 成功创建 collection 'biz'
+2026-06-14 17:47:53 | INFO     | milvus_client._load_collection:223 | 成功加载 collection 'biz'
+2026-06-14 17:47:53 | INFO     | main.lifespan:32 | ✅ Milvus 连接成功
+2026-06-14 17:47:53 | INFO     | main.lifespan:34 | ============================================================
+2026-06-14 17:48:11 | INFO     | chat.chat:38 | [会话 test-1] 收到快速对话请求: 你好
+2026-06-14 17:48:11 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 17:48:11 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 17:48:11 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 17:48:11 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 17:48:11 | INFO     | rag_agent_service.query:204 | [会话 test-1] RAG Agent 收到查询（非流式）: 你好
+2026-06-14 17:48:12 | ERROR    | rag_agent_service.query:245 | [会话 test-1] RAG Agent 查询失败（非流式）: AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '467a314c-2598-90d2-9954-2fbe37b6d8f8'}
+  caused by: HTTPStatusError: Client error '401 Unauthorized' for url 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-14 17:48:12 | ERROR    | chat.chat:57 | 对话接口错误: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '467a314c-2598-90d2-9954-2fbe37b6d8f8'}
+2026-06-14 18:02:52 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:02:52 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:02:52 | INFO     | document_splitter_service.__init__:39 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:02:52 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:02:52 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 18:02:52 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 18:02:52 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:02:52 | INFO     | main.lifespan:23 | ============================================================
+2026-06-14 18:02:52 | INFO     | main.lifespan:24 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:02:52 | INFO     | main.lifespan:25 | 📝 环境: 开发
+2026-06-14 18:02:52 | INFO     | main.lifespan:26 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:02:52 | INFO     | main.lifespan:27 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:02:52 | INFO     | main.lifespan:30 | 🔌 正在连接 Milvus...
+2026-06-14 18:02:52 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:02:52 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:02:52 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:02:52 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:02:52 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:02:52 | INFO     | main.lifespan:32 | ✅ Milvus 连接成功
+2026-06-14 18:02:52 | INFO     | main.lifespan:34 | ============================================================
+2026-06-14 18:03:05 | INFO     | chat.chat:38 | [会话 test-1] 收到快速对话请求: 你好，请简单介绍一下你自己
+2026-06-14 18:03:05 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:03:05 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:03:05 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 18:03:05 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:03:05 | INFO     | rag_agent_service.query:204 | [会话 test-1] RAG Agent 收到查询（非流式）: 你好，请简单介绍一下你自己
+2026-06-14 18:03:12 | INFO     | rag_agent_service.query:238 | [会话 test-1] RAG Agent 查询完成（非流式）
+2026-06-14 18:03:12 | INFO     | chat.chat:44 | [会话 test-1] 快速对话完成
+2026-06-14 18:03:28 | INFO     | file.upload_file:68 | 文件上传成功: uploads/cpu_high_usage.md
+2026-06-14 18:03:28 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/cpu_high_usage.md
+2026-06-14 18:03:28 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md
+2026-06-14 18:03:28 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md, 内容长度: 1891 字符
+2026-06-14 18:03:29 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md, 删除数量: 0
+2026-06-14 18:03:29 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md -> 3 个分片
+2026-06-14 18:03:29 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/cpu_high_usage.md -> 3 个分片
+2026-06-14 18:03:29 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 18:03:29 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 3 个文档
+2026-06-14 18:03:29 | INFO     | vector_store_manager.add_documents:70 | 批量添加 3 个文档完成, 耗时: 0.44s, 平均: 0.15s/个
+2026-06-14 18:03:29 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/cpu_high_usage.md, 共 3 个分片
+2026-06-14 18:03:29 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/cpu_high_usage.md
+2026-06-14 18:03:29 | INFO     | file.upload_file:68 | 文件上传成功: uploads/disk_high_usage.md
+2026-06-14 18:03:29 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/disk_high_usage.md
+2026-06-14 18:03:29 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md
+2026-06-14 18:03:29 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md, 内容长度: 4546 字符
+2026-06-14 18:03:30 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md, 删除数量: 0
+2026-06-14 18:03:30 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md -> 6 个分片
+2026-06-14 18:03:30 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/disk_high_usage.md -> 6 个分片
+2026-06-14 18:03:30 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 6 个文档
+2026-06-14 18:03:30 | INFO     | vector_store_manager.add_documents:70 | 批量添加 6 个文档完成, 耗时: 0.57s, 平均: 0.10s/个
+2026-06-14 18:03:30 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/disk_high_usage.md, 共 6 个分片
+2026-06-14 18:03:30 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/disk_high_usage.md
+2026-06-14 18:03:30 | INFO     | file.upload_file:68 | 文件上传成功: uploads/memory_high_usage.md
+2026-06-14 18:03:30 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/memory_high_usage.md
+2026-06-14 18:03:30 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md
+2026-06-14 18:03:30 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md, 内容长度: 2899 字符
+2026-06-14 18:03:30 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md, 删除数量: 0
+2026-06-14 18:03:30 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md -> 4 个分片
+2026-06-14 18:03:30 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/memory_high_usage.md -> 4 个分片
+2026-06-14 18:03:30 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 18:03:31 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.38s, 平均: 0.09s/个
+2026-06-14 18:03:31 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/memory_high_usage.md, 共 4 个分片
+2026-06-14 18:03:31 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/memory_high_usage.md
+2026-06-14 18:03:31 | INFO     | file.upload_file:68 | 文件上传成功: uploads/service_unavailable.md
+2026-06-14 18:03:31 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/service_unavailable.md
+2026-06-14 18:03:31 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md
+2026-06-14 18:03:31 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md, 内容长度: 4052 字符
+2026-06-14 18:03:31 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md, 删除数量: 0
+2026-06-14 18:03:31 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md -> 4 个分片
+2026-06-14 18:03:31 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/service_unavailable.md -> 4 个分片
+2026-06-14 18:03:31 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 18:03:32 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.45s, 平均: 0.11s/个
+2026-06-14 18:03:32 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/service_unavailable.md, 共 4 个分片
+2026-06-14 18:03:32 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/service_unavailable.md
+2026-06-14 18:03:32 | INFO     | file.upload_file:68 | 文件上传成功: uploads/slow_response.md
+2026-06-14 18:03:32 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/slow_response.md
+2026-06-14 18:03:32 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/slow_response.md
+2026-06-14 18:03:32 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/slow_response.md, 内容长度: 3631 字符
+2026-06-14 18:03:32 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/slow_response.md, 删除数量: 0
+2026-06-14 18:03:32 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/slow_response.md -> 4 个分片
+2026-06-14 18:03:32 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/slow_response.md -> 4 个分片
+2026-06-14 18:03:32 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 18:03:32 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.47s, 平均: 0.12s/个
+2026-06-14 18:03:32 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/slow_response.md, 共 4 个分片
+2026-06-14 18:03:32 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/slow_response.md
+2026-06-14 18:03:39 | INFO     | chat.chat_stream:93 | [会话 test-stream-1] 收到流式对话请求: CPU使用率过高怎么排查
+2026-06-14 18:03:39 | INFO     | rag_agent_service.query_stream:271 | [会话 test-stream-1] RAG Agent 收到查询（流式）: CPU使用率过高怎么排查
+2026-06-14 18:03:42 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU使用率过高排查方法'
+2026-06-14 18:03:42 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:03:45 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU使用率过高排查步骤 处理流程 解决方法'
+2026-06-14 18:03:45 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:04:30 | INFO     | aiops.diagnose_stream:125 | [会话 diag-test-1] 收到 AIOps 诊断请求（流式）
+2026-06-14 18:04:30 | INFO     | aiops_service.execute:96 | [会话 diag-test-1] 开始执行任务: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 18:04:30 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 18:04:30 | INFO     | planner.planner:74 | 用户输入: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 18:04:30 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 18:04:30 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过'
+2026-06-14 18:04:31 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:04:31 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 2120
+2026-06-14 18:04:31 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 18:04:41 | INFO     | planner.planner:144 | 计划已生成，共 11 个步骤
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤1: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态和基本信息。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤2: 步骤2: 分析步骤1返回的告警数据。如果不存在活跃告警（alerts 为空或 state_counts 中 firing 为0），则直接生成无告警的诊断报告并结束任务。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤3: 步骤3: 如果存在活跃告警，遍历每个告警，提取关键信息（告警名称、级别/labels severity、目标服务/labels service、首次触发时间、最新触发时间、持续时间、描述注解）。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤4: 步骤4: 针对每个活跃告警，根据告警类型（如 CPU、内存、响应时间等）参考知识库中的经验文档制定具体的排查策略。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤5: 步骤5: 使用 get_current_timestamp 工具获取当前时间戳，用于计算日志查询的时间范围（如最近30分钟）。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤6: 步骤6: 对于每个告警涉及的服务，使用 search_topic_by_service_name 或 get_topic_info_by_name 工具查找对应的日志主题（topic_id）。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤7: 步骤7: 根据告警类型执行相应的监控指标查询：如果是 CPU 相关告警，使用 query_cpu_metrics；如果是内存相关告警，使用 query_memory_metrics。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤8: 步骤8: 使用 search_log 工具查询相关日志证据。根据经验文档：CPU 告警查询 system-metrics 和 application-logs；内存告警查询 system-metrics (OOM) 和 application-logs (OutOfMemoryError)；响应时间告警查询 application-logs (response_time) 和 database-slow-query。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤9: 步骤9: 综合告警详情、监控指标数据和日志证据，对每个告警进行根因分析，确定根本原因。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤10: 步骤10: 基于根因分析和经验文档中的处理方案，为每个告警制定具体的处理建议和执行步骤。
+2026-06-14 18:04:41 | INFO     | planner.planner:146 |   步骤11: 步骤11: 按照要求的 Markdown 格式整合所有信息，生成完整的告警分析报告，包括活跃告警清单、每个告警的根因分析、处理方案以及整体结论和建议。
+2026-06-14 18:04:41 | INFO     | aiops_service.execute:121 | 节点 'planner' 输出事件
+2026-06-14 18:04:41 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 18:04:41 | INFO     | executor.executor:35 | 当前任务: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态和基本信息。
+2026-06-14 18:04:41 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 18:04:44 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 18:04:44 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 18:04:44 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 18:04:49 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 609
+2026-06-14 18:04:49 | INFO     | aiops_service.execute:121 | 节点 'executor' 输出事件
+2026-06-14 18:04:49 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 18:04:49 | INFO     | replanner.replanner:126 | 剩余计划步骤: 10
+2026-06-14 18:04:49 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 18:04:49 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 18:04:49 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 18:04:51 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 18:04:51 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 18:04:51 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 18:05:07 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 1869
+2026-06-14 18:05:07 | INFO     | aiops_service.should_continue:53 | 已生成最终响应，结束流程
+2026-06-14 18:05:07 | INFO     | aiops_service.execute:121 | 节点 'replanner' 输出事件
+2026-06-14 18:05:07 | INFO     | aiops.event_generator:140 | [会话 diag-test-1] AIOps 诊断流式响应完成
+2026-06-14 18:07:42 | INFO     | chat.chat:38 | [会话 session_tsurr94uf_1781431651134] 收到快速对话请求: 你是什么模型
+2026-06-14 18:07:42 | INFO     | rag_agent_service.query:204 | [会话 session_tsurr94uf_1781431651134] RAG Agent 收到查询（非流式）: 你是什么模型
+2026-06-14 18:07:42 | ERROR    | rag_agent_service.query:245 | [会话 session_tsurr94uf_1781431651134] RAG Agent 查询失败（非流式）: AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'e80fecf0-d1a0-93b3-829e-668988b6cf42'}
+  caused by: HTTPStatusError: Client error '401 Unauthorized' for url 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-14 18:07:42 | ERROR    | chat.chat:57 | 对话接口错误: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': 'e80fecf0-d1a0-93b3-829e-668988b6cf42'}
+2026-06-14 18:08:20 | INFO     | chat.chat:38 | [会话 session_tsurr94uf_1781431651134] 收到快速对话请求: 你是什么模型
+2026-06-14 18:08:20 | INFO     | rag_agent_service.query:204 | [会话 session_tsurr94uf_1781431651134] RAG Agent 收到查询（非流式）: 你是什么模型
+2026-06-14 18:08:21 | ERROR    | rag_agent_service.query:245 | [会话 session_tsurr94uf_1781431651134] RAG Agent 查询失败（非流式）: AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '6f4960fc-9488-9eb9-a8c8-7c2442b6adc4'}
+  caused by: HTTPStatusError: Client error '401 Unauthorized' for url 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-14 18:08:21 | ERROR    | chat.chat:57 | 对话接口错误: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '6f4960fc-9488-9eb9-a8c8-7c2442b6adc4'}
+2026-06-14 18:12:58 | INFO     | chat.chat:38 | [会话 test-2] 收到快速对话请求: 你是谁
+2026-06-14 18:12:58 | INFO     | rag_agent_service.query:204 | [会话 test-2] RAG Agent 收到查询（非流式）: 你是谁
+2026-06-14 18:13:03 | INFO     | rag_agent_service.query:238 | [会话 test-2] RAG Agent 查询完成（非流式）
+2026-06-14 18:13:03 | INFO     | chat.chat:44 | [会话 test-2] 快速对话完成
+2026-06-14 18:18:18 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:18:18 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:18:18 | INFO     | document_splitter_service.__init__:39 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:18:18 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:18:18 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 18:18:18 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 18:18:18 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:18:18 | INFO     | main.lifespan:23 | ============================================================
+2026-06-14 18:18:18 | INFO     | main.lifespan:24 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:18:18 | INFO     | main.lifespan:25 | 📝 环境: 开发
+2026-06-14 18:18:18 | INFO     | main.lifespan:26 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:18:18 | INFO     | main.lifespan:27 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:18:18 | INFO     | main.lifespan:30 | 🔌 正在连接 Milvus...
+2026-06-14 18:18:18 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:18:18 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:18:18 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:18:18 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:18:18 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:18:18 | INFO     | main.lifespan:32 | ✅ Milvus 连接成功
+2026-06-14 18:18:18 | INFO     | main.lifespan:34 | ============================================================
+2026-06-14 18:19:00 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/cpu_high_usage.md
+2026-06-14 18:19:00 | INFO     | file.upload_file:68 | 文件上传成功: uploads/cpu_high_usage.md
+2026-06-14 18:19:00 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/cpu_high_usage.md
+2026-06-14 18:19:00 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md
+2026-06-14 18:19:00 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md, 内容长度: 1891 字符
+2026-06-14 18:19:01 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md, 删除数量: 0
+2026-06-14 18:19:01 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md -> 3 个分片
+2026-06-14 18:19:01 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/cpu_high_usage.md -> 3 个分片
+2026-06-14 18:19:01 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 18:19:01 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 3 个文档
+2026-06-14 18:19:01 | INFO     | vector_store_manager.add_documents:70 | 批量添加 3 个文档完成, 耗时: 0.57s, 平均: 0.19s/个
+2026-06-14 18:19:01 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/cpu_high_usage.md, 共 3 个分片
+2026-06-14 18:19:01 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/cpu_high_usage.md
+2026-06-14 18:19:02 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/memory_high_usage.md
+2026-06-14 18:19:02 | INFO     | file.upload_file:68 | 文件上传成功: uploads/memory_high_usage.md
+2026-06-14 18:19:02 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/memory_high_usage.md
+2026-06-14 18:19:02 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md
+2026-06-14 18:19:02 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md, 内容长度: 2899 字符
+2026-06-14 18:19:02 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md, 删除数量: 0
+2026-06-14 18:19:02 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md -> 4 个分片
+2026-06-14 18:19:02 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/memory_high_usage.md -> 4 个分片
+2026-06-14 18:19:02 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 18:19:02 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.49s, 平均: 0.12s/个
+2026-06-14 18:19:02 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/memory_high_usage.md, 共 4 个分片
+2026-06-14 18:19:02 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/memory_high_usage.md
+2026-06-14 18:19:03 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/disk_high_usage.md
+2026-06-14 18:19:03 | INFO     | file.upload_file:68 | 文件上传成功: uploads/disk_high_usage.md
+2026-06-14 18:19:03 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/disk_high_usage.md
+2026-06-14 18:19:03 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md
+2026-06-14 18:19:03 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md, 内容长度: 4546 字符
+2026-06-14 18:19:03 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md, 删除数量: 0
+2026-06-14 18:19:03 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md -> 6 个分片
+2026-06-14 18:19:03 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/disk_high_usage.md -> 6 个分片
+2026-06-14 18:19:03 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 6 个文档
+2026-06-14 18:19:04 | INFO     | vector_store_manager.add_documents:70 | 批量添加 6 个文档完成, 耗时: 0.58s, 平均: 0.10s/个
+2026-06-14 18:19:04 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/disk_high_usage.md, 共 6 个分片
+2026-06-14 18:19:04 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/disk_high_usage.md
+2026-06-14 18:19:04 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/service_unavailable.md
+2026-06-14 18:19:04 | INFO     | file.upload_file:68 | 文件上传成功: uploads/service_unavailable.md
+2026-06-14 18:19:04 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/service_unavailable.md
+2026-06-14 18:19:04 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md
+2026-06-14 18:19:04 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md, 内容长度: 4052 字符
+2026-06-14 18:19:05 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md, 删除数量: 0
+2026-06-14 18:19:05 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md -> 4 个分片
+2026-06-14 18:19:05 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/service_unavailable.md -> 4 个分片
+2026-06-14 18:19:05 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 18:19:05 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.55s, 平均: 0.14s/个
+2026-06-14 18:19:05 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/service_unavailable.md, 共 4 个分片
+2026-06-14 18:19:05 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/service_unavailable.md
+2026-06-14 18:19:06 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/slow_response.md
+2026-06-14 18:19:06 | INFO     | file.upload_file:68 | 文件上传成功: uploads/slow_response.md
+2026-06-14 18:19:06 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/slow_response.md
+2026-06-14 18:19:06 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/slow_response.md
+2026-06-14 18:19:06 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/slow_response.md, 内容长度: 3631 字符
+2026-06-14 18:19:06 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/slow_response.md, 删除数量: 0
+2026-06-14 18:19:06 | INFO     | document_splitter_service.split_markdown:76 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/slow_response.md -> 4 个分片
+2026-06-14 18:19:06 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/slow_response.md -> 4 个分片
+2026-06-14 18:19:06 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 18:19:07 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.47s, 平均: 0.12s/个
+2026-06-14 18:19:07 | INFO     | vector_index_service.index_single_file:165 | 文件索引完成: uploads/slow_response.md, 共 4 个分片
+2026-06-14 18:19:07 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/slow_response.md
+2026-06-14 18:19:29 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:19:39 | INFO     | chat.chat:38 | [会话 rag-test] 收到快速对话请求: CPU使用率过高怎么排查
+2026-06-14 18:19:39 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:19:39 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:19:40 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 18:19:40 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:19:40 | INFO     | rag_agent_service.query:204 | [会话 rag-test] RAG Agent 收到查询（非流式）: CPU使用率过高怎么排查
+2026-06-14 18:19:42 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU使用率过高排查方法'
+2026-06-14 18:19:43 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:19:44 | INFO     | rag_agent_service.query:238 | [会话 rag-test] RAG Agent 查询完成（非流式）
+2026-06-14 18:19:44 | INFO     | chat.chat:44 | [会话 rag-test] 快速对话完成
+2026-06-14 18:19:59 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:19:59 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:19:59 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:19:59 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:19:59 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 18:19:59 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:20:02 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU使用率过高排查方法'
+2026-06-14 18:20:02 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:20:02 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:20:02 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:20:02 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:20:02 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:20:02 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 18:20:02 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:20:26 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:20:26 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:20:26 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:20:26 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:20:26 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 18:20:26 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:20:31 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU使用率过高排查方法'
+2026-06-14 18:20:31 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 18:20:31 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:20:31 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:20:31 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:20:31 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:20:31 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:20:31 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 18:20:32 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:21:01 | INFO     | chat.chat:38 | [会话 verify-test] 收到快速对话请求: CPU使用率过高怎么排查
+2026-06-14 18:21:01 | INFO     | rag_agent_service.query:204 | [会话 verify-test] RAG Agent 收到查询（非流式）: CPU使用率过高怎么排查
+2026-06-14 18:21:05 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU使用率过高怎么排查'
+2026-06-14 18:21:05 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:21:21 | INFO     | rag_agent_service.query:238 | [会话 verify-test] RAG Agent 查询完成（非流式）
+2026-06-14 18:21:21 | INFO     | chat.chat:44 | [会话 verify-test] 快速对话完成
+2026-06-14 18:21:54 | INFO     | chat.chat:38 | [会话 session_uwzclsr5a_1781432507763] 收到快速对话请求: 你好，你是什么模型
+2026-06-14 18:21:54 | INFO     | rag_agent_service.query:204 | [会话 session_uwzclsr5a_1781432507763] RAG Agent 收到查询（非流式）: 你好，你是什么模型
+2026-06-14 18:21:59 | INFO     | rag_agent_service.query:238 | [会话 session_uwzclsr5a_1781432507763] RAG Agent 查询完成（非流式）
+2026-06-14 18:21:59 | INFO     | chat.chat:44 | [会话 session_uwzclsr5a_1781432507763] 快速对话完成
+2026-06-14 18:23:46 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:23:47 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:23:47 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:23:47 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:23:47 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 18:23:47 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:24:04 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:24:05 | INFO     | rag_agent_service.__init__:115 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:24:05 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:24:05 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:24:05 | INFO     | rag_agent_service._initialize_agent:139 | 成功加载 7 个 MCP 工具
+2026-06-14 18:24:05 | INFO     | rag_agent_service._initialize_agent:154 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:24:09 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='CPU高怎么办'
+2026-06-14 18:24:09 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:24:09 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:24:09 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:24:09 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:24:09 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:24:09 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 18:24:09 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 18:24:54 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:24:54 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:24:54 | INFO     | document_splitter_service.__init__:39 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:24:54 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:24:54 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 18:24:54 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 18:24:54 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:24:54 | INFO     | main.lifespan:23 | ============================================================
+2026-06-14 18:24:54 | INFO     | main.lifespan:24 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:24:54 | INFO     | main.lifespan:25 | 📝 环境: 开发
+2026-06-14 18:24:54 | INFO     | main.lifespan:26 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:24:54 | INFO     | main.lifespan:27 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:24:54 | INFO     | main.lifespan:30 | 🔌 正在连接 Milvus...
+2026-06-14 18:24:54 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:24:54 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:24:54 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:24:54 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:24:54 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:24:54 | INFO     | main.lifespan:32 | ✅ Milvus 连接成功
+2026-06-14 18:24:54 | INFO     | main.lifespan:34 | ============================================================
+2026-06-14 18:25:09 | INFO     | chat.chat_stream:93 | [会话 fix-test] 收到流式对话请求: CPU使用率过高怎么排查
+2026-06-14 18:25:09 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:25:09 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:25:09 | INFO     | rag_agent_service._initialize_agent:140 | 成功加载 7 个 MCP 工具
+2026-06-14 18:25:09 | INFO     | rag_agent_service._initialize_agent:155 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:25:09 | INFO     | rag_agent_service.query_stream:272 | [会话 fix-test] RAG Agent 收到查询（流式）: CPU使用率过高怎么排查
+2026-06-14 18:25:12 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 18:25:20 | INFO     | rag_agent_service.query_stream:349 | [会话 fix-test] RAG Agent 查询完成（流式）
+2026-06-14 18:25:20 | INFO     | chat.event_generator:158 | [会话 fix-test] 流式对话完成
+2026-06-14 18:25:33 | INFO     | chat.chat_stream:93 | [会话 fix-test2] 收到流式对话请求: 简单用一句话介绍你自己
+2026-06-14 18:25:33 | INFO     | rag_agent_service.query_stream:272 | [会话 fix-test2] RAG Agent 收到查询（流式）: 简单用一句话介绍你自己
+2026-06-14 18:27:48 | INFO     | chat.chat:38 | [会话 session_d24if45kv_1781432762934] 收到快速对话请求: 你好，请问你是什么模型
+2026-06-14 18:27:48 | INFO     | rag_agent_service.query:205 | [会话 session_d24if45kv_1781432762934] RAG Agent 收到查询（非流式）: 你好，请问你是什么模型
+2026-06-14 18:27:52 | INFO     | rag_agent_service.query:239 | [会话 session_d24if45kv_1781432762934] RAG Agent 查询完成（非流式）
+2026-06-14 18:27:52 | INFO     | chat.chat:44 | [会话 session_d24if45kv_1781432762934] 快速对话完成
+2026-06-14 18:30:11 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:30:12 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:30:12 | INFO     | mcp_client.get_mcp_client:147 | 初始化全局 MCP 客户端...
+2026-06-14 18:30:12 | INFO     | mcp_client.get_mcp_client:153 | 全局 MCP 客户端初始化完成
+2026-06-14 18:30:12 | INFO     | rag_agent_service._initialize_agent:140 | 成功加载 7 个 MCP 工具
+2026-06-14 18:30:12 | INFO     | rag_agent_service._initialize_agent:155 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:33:37 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:33:37 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:33:37 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:33:37 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:33:37 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 18:33:37 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 18:33:37 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:33:37 | INFO     | main.lifespan:23 | ============================================================
+2026-06-14 18:33:37 | INFO     | main.lifespan:24 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:33:37 | INFO     | main.lifespan:25 | 📝 环境: 开发
+2026-06-14 18:33:37 | INFO     | main.lifespan:26 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:33:37 | INFO     | main.lifespan:27 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:33:37 | INFO     | main.lifespan:30 | 🔌 正在连接 Milvus...
+2026-06-14 18:33:37 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:33:37 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:33:37 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:33:37 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:33:37 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:33:37 | INFO     | main.lifespan:32 | ✅ Milvus 连接成功
+2026-06-14 18:33:37 | INFO     | main.lifespan:34 | ============================================================
+2026-06-14 18:33:50 | INFO     | chat.chat:38 | [会话 final-test] 收到快速对话请求: 一句话解释什么是向量数据库
+2026-06-14 18:33:50 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 18:33:50 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 18:33:50 | INFO     | rag_agent_service._initialize_agent:140 | 成功加载 7 个 MCP 工具
+2026-06-14 18:33:50 | INFO     | rag_agent_service._initialize_agent:155 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:33:50 | INFO     | rag_agent_service.query:205 | [会话 final-test] RAG Agent 收到查询（非流式）: 一句话解释什么是向量数据库
+2026-06-14 18:33:52 | INFO     | rag_agent_service.query:239 | [会话 final-test] RAG Agent 查询完成（非流式）
+2026-06-14 18:33:52 | INFO     | chat.chat:44 | [会话 final-test] 快速对话完成
+2026-06-14 18:33:53 | INFO     | chat.chat_stream:93 | [会话 stream-final] 收到流式对话请求: 两个字的回复
+2026-06-14 18:33:53 | INFO     | rag_agent_service.query_stream:272 | [会话 stream-final] RAG Agent 收到查询（流式）: 两个字的回复
+2026-06-14 18:33:54 | INFO     | rag_agent_service.query_stream:349 | [会话 stream-final] RAG Agent 查询完成（流式）
+2026-06-14 18:33:54 | INFO     | chat.event_generator:158 | [会话 stream-final] 流式对话完成
+2026-06-14 18:41:55 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:44:37 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:44:37 | INFO     | checkpoint_manager.get_checkpointer:33 | SqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 18:44:37 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:44:37 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:44:37 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:44:37 | INFO     | aiops_service._build_graph:31 | 构建工作流图...
+2026-06-14 18:44:37 | INFO     | aiops_service._build_graph:78 | 工作流图构建完成
+2026-06-14 18:44:37 | INFO     | aiops_service.__init__:27 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:44:37 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 18:44:37 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:44:37 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 18:44:37 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:44:37 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:44:37 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 18:44:37 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:44:37 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:44:37 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:44:38 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:44:38 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:44:38 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 18:44:38 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 18:44:53 | INFO     | chat.chat:38 | [会话 persist-test] 收到快速对话请求: 我的名字是小明，请记住它
+2026-06-14 18:44:53 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 18:44:53 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 18:44:53 | INFO     | rag_agent_service._initialize_agent:140 | 成功加载 7 个 MCP 工具
+2026-06-14 18:44:53 | INFO     | rag_agent_service._initialize_agent:155 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:44:53 | INFO     | rag_agent_service.query:205 | [会话 persist-test] RAG Agent 收到查询（非流式）: 我的名字是小明，请记住它
+2026-06-14 18:44:53 | ERROR    | rag_agent_service.query:246 | [会话 persist-test] RAG Agent 查询失败（非流式）: NotImplementedError: The SqliteSaver does not support async methods. Consider using AsyncSqliteSaver instead.
+from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+Note: AsyncSqliteSaver requires the aiosqlite package to use.
+Install with:
+`pip install aiosqlite`
+See https://langchain-ai.github.io/langgraph/reference/checkpoints/#langgraph.checkpoint.sqlite.aio.AsyncSqliteSaverfor more information.
+2026-06-14 18:44:53 | ERROR    | chat.chat:57 | 对话接口错误: The SqliteSaver does not support async methods. Consider using AsyncSqliteSaver instead.
+from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+Note: AsyncSqliteSaver requires the aiosqlite package to use.
+Install with:
+`pip install aiosqlite`
+See https://langchain-ai.github.io/langgraph/reference/checkpoints/#langgraph.checkpoint.sqlite.aio.AsyncSqliteSaverfor more information.
+2026-06-14 18:44:57 | INFO     | chat.chat:38 | [会话 persist-test] 收到快速对话请求: 我的名字是小明，请记住它
+2026-06-14 18:44:57 | INFO     | rag_agent_service.query:205 | [会话 persist-test] RAG Agent 收到查询（非流式）: 我的名字是小明，请记住它
+2026-06-14 18:44:57 | ERROR    | rag_agent_service.query:246 | [会话 persist-test] RAG Agent 查询失败（非流式）: NotImplementedError: The SqliteSaver does not support async methods. Consider using AsyncSqliteSaver instead.
+from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+Note: AsyncSqliteSaver requires the aiosqlite package to use.
+Install with:
+`pip install aiosqlite`
+See https://langchain-ai.github.io/langgraph/reference/checkpoints/#langgraph.checkpoint.sqlite.aio.AsyncSqliteSaverfor more information.
+2026-06-14 18:44:57 | ERROR    | chat.chat:57 | 对话接口错误: The SqliteSaver does not support async methods. Consider using AsyncSqliteSaver instead.
+from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+Note: AsyncSqliteSaver requires the aiosqlite package to use.
+Install with:
+`pip install aiosqlite`
+See https://langchain-ai.github.io/langgraph/reference/checkpoints/#langgraph.checkpoint.sqlite.aio.AsyncSqliteSaverfor more information.
+2026-06-14 18:46:41 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:46:41 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:46:41 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:46:41 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:46:41 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 18:46:41 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 18:46:41 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:46:41 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 18:46:41 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:46:41 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 18:46:41 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:46:41 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:46:41 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 18:46:41 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:46:41 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:46:41 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:46:41 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:46:41 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:46:41 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 18:46:41 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 18:46:57 | INFO     | chat.chat:38 | [会话 persist-001] 收到快速对话请求: 记住：我最喜欢的编程语言是Python
+2026-06-14 18:46:57 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 18:46:57 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 18:46:57 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 18:46:57 | INFO     | rag_agent_service._initialize_agent:142 | 成功加载 7 个 MCP 工具
+2026-06-14 18:46:57 | INFO     | rag_agent_service._initialize_agent:157 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:46:57 | INFO     | rag_agent_service.query:207 | [会话 persist-001] RAG Agent 收到查询（非流式）: 记住：我最喜欢的编程语言是Python
+2026-06-14 18:46:59 | INFO     | rag_agent_service.query:241 | [会话 persist-001] RAG Agent 查询完成（非流式）
+2026-06-14 18:46:59 | INFO     | chat.chat:44 | [会话 persist-001] 快速对话完成
+2026-06-14 18:46:59 | INFO     | chat.chat:38 | [会话 persist-001] 收到快速对话请求: 我最喜欢的编程语言是什么
+2026-06-14 18:46:59 | INFO     | rag_agent_service.query:207 | [会话 persist-001] RAG Agent 收到查询（非流式）: 我最喜欢的编程语言是什么
+2026-06-14 18:47:00 | INFO     | rag_agent_service.query:241 | [会话 persist-001] RAG Agent 查询完成（非流式）
+2026-06-14 18:47:00 | INFO     | chat.chat:44 | [会话 persist-001] 快速对话完成
+2026-06-14 18:47:00 | ERROR    | rag_agent_service.get_session_history:402 | 获取会话历史失败: persist-001, 错误: Synchronous calls to AsyncSqliteSaver are only allowed from a different thread. From the main thread, use the async interface. For example, use `await checkpointer.aget_tuple(...)` or `await graph.ainvoke(...)`.
+2026-06-14 18:47:04 | ERROR    | rag_agent_service.get_session_history:402 | 获取会话历史失败: persist-001, 错误: Synchronous calls to AsyncSqliteSaver are only allowed from a different thread. From the main thread, use the async interface. For example, use `await checkpointer.aget_tuple(...)` or `await graph.ainvoke(...)`.
+2026-06-14 18:47:19 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:47:20 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:47:20 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:47:20 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:47:20 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 18:47:20 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 18:47:20 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:47:20 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 18:47:20 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:47:20 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 18:47:20 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:47:20 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:47:20 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 18:47:20 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:47:20 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:47:20 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:47:20 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:47:20 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:47:20 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 18:47:20 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 18:47:39 | INFO     | chat.chat:38 | [会话 cross-restart] 收到快速对话请求: 记住我的名字是张三，这个很重要
+2026-06-14 18:47:39 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 18:47:39 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 18:47:39 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 18:47:39 | INFO     | rag_agent_service._initialize_agent:142 | 成功加载 7 个 MCP 工具
+2026-06-14 18:47:39 | INFO     | rag_agent_service._initialize_agent:157 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:47:39 | INFO     | rag_agent_service.query:207 | [会话 cross-restart] RAG Agent 收到查询（非流式）: 记住我的名字是张三，这个很重要
+2026-06-14 18:47:40 | INFO     | rag_agent_service.query:241 | [会话 cross-restart] RAG Agent 查询完成（非流式）
+2026-06-14 18:47:40 | INFO     | chat.chat:44 | [会话 cross-restart] 快速对话完成
+2026-06-14 18:47:40 | WARNING  | rag_agent_service.list_sessions:445 | 列出会话失败: Synchronous calls to AsyncSqliteSaver are only allowed from a different thread. From the main thread, use the async interface. For example, use `checkpointer.alist(...)` or `await graph.ainvoke(...)`.
+2026-06-14 18:47:40 | ERROR    | rag_agent_service.get_session_history:402 | 获取会话历史失败: cross-restart, 错误: Synchronous calls to AsyncSqliteSaver are only allowed from a different thread. From the main thread, use the async interface. For example, use `await checkpointer.aget_tuple(...)` or `await graph.ainvoke(...)`.
+2026-06-14 18:51:04 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:51:04 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:51:04 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:51:04 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:51:04 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 18:51:04 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 18:51:04 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:51:05 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 18:51:05 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:51:05 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 18:51:05 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:51:05 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:51:05 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 18:51:05 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:51:05 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:51:05 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:51:05 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:51:05 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:51:05 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 18:51:05 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 18:51:20 | INFO     | chat.chat:38 | [会话 persist-final] 收到快速对话请求: 记住：我的服务器在ap-beijing区域，服务名是data-sync
+2026-06-14 18:51:20 | ERROR    | rag_agent_service.query:248 | [会话 persist-final] RAG Agent 查询失败（非流式）: OperationalError: disk I/O error
+2026-06-14 18:51:20 | ERROR    | chat.chat:57 | 对话接口错误: disk I/O error
+2026-06-14 18:51:27 | INFO     | chat.chat:38 | [会话 persist-final] 收到快速对话请求: 记住我的服务器在北京
+2026-06-14 18:51:27 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 18:51:27 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 18:51:27 | INFO     | rag_agent_service._initialize_agent:142 | 成功加载 7 个 MCP 工具
+2026-06-14 18:51:27 | INFO     | rag_agent_service._initialize_agent:157 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:51:27 | INFO     | rag_agent_service.query:207 | [会话 persist-final] RAG Agent 收到查询（非流式）: 记住我的服务器在北京
+2026-06-14 18:51:27 | ERROR    | rag_agent_service.query:248 | [会话 persist-final] RAG Agent 查询失败（非流式）: OperationalError: disk I/O error
+2026-06-14 18:51:27 | ERROR    | chat.chat:57 | 对话接口错误: disk I/O error
+2026-06-14 18:51:36 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 18:51:36 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 18:51:36 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 18:51:36 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 18:51:36 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 18:51:36 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 18:51:36 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 18:51:36 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 18:51:36 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 18:51:36 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 18:51:36 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 18:51:36 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 18:51:36 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 18:51:36 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 18:51:36 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 18:51:36 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 18:51:36 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 18:51:36 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 18:51:36 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 18:51:36 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 18:51:49 | INFO     | chat.chat:38 | [会话 p1] 收到快速对话请求: 记住我的服务器在北京ap-beijing区域
+2026-06-14 18:51:49 | ERROR    | rag_agent_service.query:248 | [会话 p1] RAG Agent 查询失败（非流式）: OperationalError: disk I/O error
+2026-06-14 18:51:49 | ERROR    | chat.chat:57 | 对话接口错误: disk I/O error
+2026-06-14 18:51:56 | INFO     | chat.chat:38 | [会话 p1] 收到快速对话请求: 记住北京
+2026-06-14 18:51:56 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 18:51:56 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 18:51:56 | INFO     | rag_agent_service._initialize_agent:142 | 成功加载 7 个 MCP 工具
+2026-06-14 18:51:56 | INFO     | rag_agent_service._initialize_agent:157 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 18:51:56 | INFO     | rag_agent_service.query:207 | [会话 p1] RAG Agent 收到查询（非流式）: 记住北京
+2026-06-14 18:51:56 | ERROR    | rag_agent_service.query:248 | [会话 p1] RAG Agent 查询失败（非流式）: OperationalError: disk I/O error
+2026-06-14 18:51:56 | ERROR    | chat.chat:57 | 对话接口错误: disk I/O error
+2026-06-14 19:02:38 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:02:38 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:02:38 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:02:38 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:02:38 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 19:02:38 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 19:02:38 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:02:38 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:02:38 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:02:38 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:02:38 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:02:38 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:02:38 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:02:38 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:02:38 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:02:38 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:02:38 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:02:38 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:02:38 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:02:38 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:03:10 | INFO     | chat.chat:38 | [会话 final-run] 收到快速对话请求: 我的名字是张三，服务器在北京
+2026-06-14 19:03:10 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:03:10 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:03:10 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:03:10 | INFO     | rag_agent_service._initialize_agent:142 | 成功加载 7 个 MCP 工具
+2026-06-14 19:03:10 | INFO     | rag_agent_service._initialize_agent:157 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 19:03:10 | INFO     | rag_agent_service.query:207 | [会话 final-run] RAG Agent 收到查询（非流式）: 我的名字是张三，服务器在北京
+2026-06-14 19:03:15 | INFO     | rag_agent_service.query:241 | [会话 final-run] RAG Agent 查询完成（非流式）
+2026-06-14 19:03:15 | INFO     | chat.chat:44 | [会话 final-run] 快速对话完成
+2026-06-14 19:03:24 | INFO     | chat.chat:38 | [会话 final-run] 收到快速对话请求: 说一个字好
+2026-06-14 19:03:24 | INFO     | rag_agent_service.query:207 | [会话 final-run] RAG Agent 收到查询（非流式）: 说一个字好
+2026-06-14 19:03:25 | INFO     | rag_agent_service.query:241 | [会话 final-run] RAG Agent 查询完成（非流式）
+2026-06-14 19:03:25 | INFO     | chat.chat:44 | [会话 final-run] 快速对话完成
+2026-06-14 19:03:30 | INFO     | chat.chat:38 | [会话 persist] 收到快速对话请求: 记住：我叫张三
+2026-06-14 19:03:30 | INFO     | rag_agent_service.query:207 | [会话 persist] RAG Agent 收到查询（非流式）: 记住：我叫张三
+2026-06-14 19:03:32 | INFO     | rag_agent_service.query:241 | [会话 persist] RAG Agent 查询完成（非流式）
+2026-06-14 19:03:32 | INFO     | chat.chat:44 | [会话 persist] 快速对话完成
+2026-06-14 19:03:52 | INFO     | chat.chat:38 | [会话 persist] 收到快速对话请求: 我叫什么
+2026-06-14 19:03:52 | INFO     | rag_agent_service.query:207 | [会话 persist] RAG Agent 收到查询（非流式）: 我叫什么
+2026-06-14 19:03:53 | INFO     | rag_agent_service.query:241 | [会话 persist] RAG Agent 查询完成（非流式）
+2026-06-14 19:03:53 | INFO     | chat.chat:44 | [会话 persist] 快速对话完成
+2026-06-14 19:03:59 | INFO     | rag_agent_service.get_session_history:398 | 获取会话历史: persist, 消息数量: 4
+2026-06-14 19:05:50 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:05:51 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:05:51 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:05:51 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:05:51 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 19:05:51 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 19:05:51 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:05:51 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:05:51 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:05:51 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:05:51 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:05:51 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:05:51 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:05:51 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:05:51 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:05:51 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:05:51 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:05:51 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:05:51 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:05:51 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:06:42 | ERROR    | rag_agent_service.get_session_history:402 | 获取会话历史失败: persist, 错误: 'NoneType' object has no attribute 'aget_tuple'
+2026-06-14 19:06:42 | WARNING  | rag_agent_service.list_sessions:450 | 列出会话失败: 'NoneType' object has no attribute 'aget_tuple'
+2026-06-14 19:06:42 | INFO     | chat.chat:38 | [会话 persist] 收到快速对话请求: 我之前说我叫什么名字
+2026-06-14 19:06:42 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:06:42 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:06:42 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:06:42 | INFO     | rag_agent_service._initialize_agent:142 | 成功加载 7 个 MCP 工具
+2026-06-14 19:06:42 | INFO     | rag_agent_service._initialize_agent:157 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 19:06:42 | INFO     | rag_agent_service.query:207 | [会话 persist] RAG Agent 收到查询（非流式）: 我之前说我叫什么名字
+2026-06-14 19:06:43 | INFO     | rag_agent_service.query:241 | [会话 persist] RAG Agent 查询完成（非流式）
+2026-06-14 19:06:43 | INFO     | chat.chat:44 | [会话 persist] 快速对话完成
+2026-06-14 19:07:50 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:07:50 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:07:50 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:07:50 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:07:50 | INFO     | aiops_service._build_graph:39 | 构建工作流图...
+2026-06-14 19:07:50 | INFO     | aiops_service._build_graph:86 | 工作流图构建完成
+2026-06-14 19:07:50 | INFO     | aiops_service.__init__:28 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:07:50 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:07:50 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:07:50 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:07:50 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:07:50 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:07:50 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:07:50 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:07:50 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:07:50 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:07:50 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:07:50 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:07:50 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:07:50 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:07:58 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:07:58 | INFO     | rag_agent_service.get_session_history:404 | 获取会话历史: persist, 消息数量: 6
+2026-06-14 19:29:56 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:29:57 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:29:57 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:29:57 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:29:57 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:30:07 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:30:07 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:30:07 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:30:07 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:30:07 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:30:07 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:30:07 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:30:07 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:30:07 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:30:07 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:30:07 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:30:07 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:30:07 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:30:07 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:30:07 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:30:07 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:30:07 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:30:07 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:30:07 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:30:07 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:30:20 | INFO     | aiops.diagnose_stream:125 | [会话 archive-test-001] 收到 AIOps 诊断请求（流式）
+2026-06-14 19:30:20 | INFO     | aiops_service.execute:105 | [会话 archive-test-001] 开始执行任务: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 19:30:20 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:30:20 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:30:20 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:30:20 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 19:30:20 | INFO     | planner.planner:74 | 用户输入: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 19:30:20 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 19:30:20 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过'
+2026-06-14 19:30:20 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:30:20 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 19:30:20 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 2120
+2026-06-14 19:30:20 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:30:20 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:30:21 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:30:31 | INFO     | planner.planner:144 | 计划已生成，共 8 个步骤
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤1: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态和基本信息。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤2: 步骤2: 分析步骤1返回的告警数据。如果没有活跃告警，则直接生成包含'无活跃告警'信息的报告并结束；如果存在活跃告警，则提取每个告警的名称、级别、目标服务、触发时间、持续时长等关键信息，准备进行详细分析。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤3: 步骤3: 对于每个活跃告警，根据告警类型（如 CPU、内存、响应时间等）参考知识库中的经验文档制定具体的排查策略。首先使用 get_current_timestamp 获取当前时间戳，用于计算日志查询的时间范围。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤4: 步骤4: 针对每个告警涉及的服务，使用 search_topic_by_service_name 或 get_topic_info_by_name 工具查找对应的日志主题（topic_id），以便后续查询日志。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤5: 步骤5: 根据告警类型执行相应的指标查询和日志搜索：
+- 如果是 CPU 相关告警：使用 query_cpu_metrics 查询 CPU 使用率趋势，并使用 search_log 查询 system-metrics 和 application-logs 中最近的 ERROR 日志或高 CPU 记录。
+- 如果是内存相关告警：使用 query_memory_metrics 查询内存使用趋势，并使用 search_log 查询 system-metrics 中的 OOM 事件和 application-logs 中的 OutOfMemoryError 或 GC 相关日志。
+- 如果是响应时间相关告警：使用 search_log 查询 application-logs 中的慢响应记录和 database-slow-query 中的慢查询日志。
+- 其他类型告警：根据告警标签和描述，使用 search_log 查询相关服务的错误日志。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤6: 步骤6: 综合分析每个告警的监控指标数据和日志证据，确定根因。结合知识库中的最佳实践（如 cpu_high_usage.md, memory_high_usage.md, slow_response.md）进行归因分析。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤7: 步骤7: 为每个告警制定处理建议，包括已执行的排查步骤总结、具体处理方案、预期效果等。
+2026-06-14 19:30:31 | INFO     | planner.planner:146 |   步骤8: 步骤8: 汇总所有告警的分析结果，按照要求的 Markdown 格式生成完整的告警分析报告，包括活跃告警清单、每个告警的根因分析、处理方案以及整体结论和建议。
+2026-06-14 19:30:31 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 19:30:31 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 19:30:31 | INFO     | executor.executor:35 | 当前任务: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态和基本信息。
+2026-06-14 19:30:31 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:30:36 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 19:30:36 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 19:30:36 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 19:30:43 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 635
+2026-06-14 19:30:43 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 19:30:43 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 19:30:43 | INFO     | replanner.replanner:126 | 剩余计划步骤: 7
+2026-06-14 19:30:43 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 19:30:43 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:30:43 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 19:30:45 | INFO     | replanner.replanner:200 | Replanner 决策: replan
+2026-06-14 19:30:45 | INFO     | replanner.replanner:220 | 决定调整计划，新步骤数量: 2
+2026-06-14 19:30:45 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 2 个步骤
+2026-06-14 19:30:45 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 19:30:45 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 19:30:45 | INFO     | executor.executor:35 | 当前任务: 步骤1: 由于 Prometheus 连接失败，无法获取实时告警数据。在报告中如实记录此故障，并说明无法进行后续的告警分析和根因定位。
+2026-06-14 19:30:45 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:30:48 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 19:30:48 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 19:30:48 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 19:31:00 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 1019
+2026-06-14 19:31:00 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 19:31:00 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 19:31:00 | INFO     | replanner.replanner:126 | 剩余计划步骤: 1
+2026-06-14 19:31:00 | INFO     | replanner.replanner:127 | 已执行步骤: 2
+2026-06-14 19:31:00 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:31:00 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 19:31:01 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 19:31:01 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 19:31:01 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 19:31:33 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 2089
+2026-06-14 19:31:33 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 19:31:33 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 19:31:33 | ERROR    | aiops_service.execute:174 | [会话 archive-test-001] 任务执行失败: Synchronous calls to AsyncSqliteSaver are only allowed from a different thread. From the main thread, use the async interface. For example, use `await checkpointer.aget_tuple(...)` or `await graph.ainvoke(...)`.
+2026-06-14 19:31:33 | INFO     | aiops.event_generator:140 | [会话 archive-test-001] AIOps 诊断流式响应完成
+2026-06-14 19:32:49 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:32:50 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:32:50 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:32:50 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:32:50 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:32:50 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:32:50 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:32:50 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:32:50 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:32:50 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:32:50 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:32:50 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:32:50 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:32:50 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:32:50 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:32:50 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:32:50 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:32:50 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:32:50 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:32:50 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:34:02 | INFO     | aiops.diagnose_stream:125 | [会话 archive-verify-001] 收到 AIOps 诊断请求（流式）
+2026-06-14 19:34:02 | INFO     | aiops_service.execute:105 | [会话 archive-verify-001] 开始执行任务: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 19:34:02 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:34:02 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:34:02 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:34:02 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 19:34:02 | INFO     | planner.planner:74 | 用户输入: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 19:34:02 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 19:34:02 | INFO     | knowledge_tool.retrieve_knowledge:26 | 知识检索工具被调用: query='诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过'
+2026-06-14 19:34:02 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:34:03 | INFO     | knowledge_tool.retrieve_knowledge:43 | 检索到 3 个相关文档
+2026-06-14 19:34:03 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 2120
+2026-06-14 19:34:03 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:34:03 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:34:03 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:34:14 | INFO     | planner.planner:144 | 计划已生成，共 10 个步骤
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤1: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态和基本信息。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤2: 步骤2: 分析步骤1返回的告警数据。如果不存在活跃告警（alerts 为空或 state_counts 中 firing 为0），则直接生成无告警的诊断报告并结束任务。如果存在活跃告警，提取每个告警的名称、级别、目标服务、触发时间、持续时长等关键信息，准备进行详细分析。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤3: 步骤3: 使用 get_current_timestamp 工具获取当前时间戳（毫秒），用于计算日志查询的时间范围。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤4: 步骤4: 针对每个活跃告警，根据其告警名称和标签信息判断告警类型（如 CPU 过高、内存过高、响应慢等），并参考知识库中的经验文档确定排查策略。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤5: 步骤5: 对于涉及特定服务的告警，使用 search_topic_by_service_name 工具根据服务名称查找对应的日志主题（topic_id），以便后续查询日志。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤6: 步骤6: 根据告警类型执行相应的监控指标查询：
+- 如果是 CPU 相关告警，使用 query_cpu_metrics 查询该服务的 CPU 使用率历史数据。
+- 如果是内存相关告警，使用 query_memory_metrics 查询该服务的内存使用历史数据。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤7: 步骤7: 根据告警发生的时间范围（从首次触发时间到当前时间），使用 search_log 工具查询相关日志：
+- 对于 CPU/内存告警，查询 system-metrics 主题的系统资源日志。
+- 对于应用性能告警，查询 application-logs 主题的应用日志。
+- 查询条件需根据告警类型调整（如 cpu_usage:>80, memory_usage:>85, response_time:>3000, level:ERROR 等）。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤8: 步骤8: 综合分析每个告警的监控指标数据和日志证据，确定告警的根本原因。结合知识库中的最佳实践（如 cpu_high_usage.md, memory_high_usage.md, slow_response.md）进行分析。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤9: 步骤9: 为每个告警制定处理建议，包括已执行的排查步骤、具体处理方案和预期效果。
+2026-06-14 19:34:14 | INFO     | planner.planner:146 |   步骤10: 步骤10: 汇总所有告警的分析结果，按照要求的 Markdown 格式生成完整的告警分析报告，包含活跃告警清单、每个告警的根因分析、处理方案以及整体结论和建议。
+2026-06-14 19:34:14 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 19:34:14 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 19:34:14 | INFO     | executor.executor:35 | 当前任务: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态和基本信息。
+2026-06-14 19:34:14 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:34:17 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 19:34:17 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 19:34:17 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 19:34:23 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 617
+2026-06-14 19:34:23 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 19:34:23 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 19:34:23 | INFO     | replanner.replanner:126 | 剩余计划步骤: 9
+2026-06-14 19:34:23 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 19:34:23 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:34:23 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 19:34:27 | INFO     | replanner.replanner:200 | Replanner 决策: replan
+2026-06-14 19:34:27 | INFO     | replanner.replanner:220 | 决定调整计划，新步骤数量: 2
+2026-06-14 19:34:27 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 2 个步骤
+2026-06-14 19:34:27 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 19:34:27 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 19:34:27 | INFO     | executor.executor:35 | 当前任务: 步骤1: 由于 Prometheus 连接失败，无法获取实时告警数据。在诊断报告中如实记录此故障，说明无法进行后续的告警分析和根因定位。
+2026-06-14 19:34:27 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:34:30 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 19:34:30 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 19:34:30 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 19:34:39 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 801
+2026-06-14 19:34:39 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 19:34:39 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 19:34:39 | INFO     | replanner.replanner:126 | 剩余计划步骤: 1
+2026-06-14 19:34:39 | INFO     | replanner.replanner:127 | 已执行步骤: 2
+2026-06-14 19:34:39 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 19:34:39 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 19:34:40 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 19:34:40 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 19:34:40 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 19:35:09 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 2024
+2026-06-14 19:35:09 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 19:35:09 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 19:35:09 | INFO     | aiops.event_generator:140 | [会话 archive-verify-001] AIOps 诊断流式响应完成
+2026-06-14 19:35:09 | INFO     | diagnosis_archiver.archive_diagnosis:133 | [归档] 开始归档诊断结果: archive-verify-001
+2026-06-14 19:35:09 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: auto_archive/archive-verify-001.md -> 7 个分片
+2026-06-14 19:35:10 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: auto_archive/archive-verify-001.md, 删除数量: 0
+2026-06-14 19:35:10 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 7 个文档
+2026-06-14 19:35:10 | INFO     | vector_store_manager.add_documents:70 | 批量添加 7 个文档完成, 耗时: 0.61s, 平均: 0.09s/个
+2026-06-14 19:35:10 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:108 | [归档] 成功归档 archive-verify-001: 7 个分片
+2026-06-14 19:35:10 | INFO     | diagnosis_archiver.archive_diagnosis:148 | [归档] 归档完成: archive-verify-001, 文档长度: 5359 字符
+2026-06-14 19:35:35 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:42:12 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:43:38 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:43:38 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:43:38 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:43:38 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:43:38 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:43:38 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:43:38 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:43:51 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:43:52 | INFO     | rag_agent_service.__init__:116 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:43:52 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:43:52 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:43:52 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:43:52 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:43:52 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:43:52 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:43:52 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:43:52 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:43:52 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:43:52 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:43:52 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:43:52 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:43:52 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:43:52 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:43:52 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:43:52 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:43:52 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:43:52 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:44:18 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/cpu_high_usage.md
+2026-06-14 19:44:18 | INFO     | file.upload_file:68 | 文件上传成功: uploads/cpu_high_usage.md
+2026-06-14 19:44:18 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/cpu_high_usage.md
+2026-06-14 19:44:18 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md
+2026-06-14 19:44:18 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md, 内容长度: 1891 字符
+2026-06-14 19:44:18 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md, 删除数量: 0
+2026-06-14 19:44:18 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/cpu_high_usage.md -> 3 个分片
+2026-06-14 19:44:18 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/cpu_high_usage.md -> 3 个分片
+2026-06-14 19:44:18 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:44:18 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 3 个文档
+2026-06-14 19:44:19 | INFO     | vector_store_manager.add_documents:70 | 批量添加 3 个文档完成, 耗时: 0.63s, 平均: 0.21s/个
+2026-06-14 19:44:19 | INFO     | vector_index_service.index_single_file:169 | 文件索引完成: uploads/cpu_high_usage.md, 共 3 个分片
+2026-06-14 19:44:19 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/cpu_high_usage.md
+2026-06-14 19:44:19 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/memory_high_usage.md
+2026-06-14 19:44:19 | INFO     | file.upload_file:68 | 文件上传成功: uploads/memory_high_usage.md
+2026-06-14 19:44:19 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/memory_high_usage.md
+2026-06-14 19:44:19 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md
+2026-06-14 19:44:19 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md, 内容长度: 2899 字符
+2026-06-14 19:44:20 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md, 删除数量: 0
+2026-06-14 19:44:20 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/memory_high_usage.md -> 4 个分片
+2026-06-14 19:44:20 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/memory_high_usage.md -> 4 个分片
+2026-06-14 19:44:20 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 19:44:20 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.39s, 平均: 0.10s/个
+2026-06-14 19:44:20 | INFO     | vector_index_service.index_single_file:169 | 文件索引完成: uploads/memory_high_usage.md, 共 4 个分片
+2026-06-14 19:44:20 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/memory_high_usage.md
+2026-06-14 19:44:20 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/disk_high_usage.md
+2026-06-14 19:44:20 | INFO     | file.upload_file:68 | 文件上传成功: uploads/disk_high_usage.md
+2026-06-14 19:44:20 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/disk_high_usage.md
+2026-06-14 19:44:20 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md
+2026-06-14 19:44:20 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md, 内容长度: 4546 字符
+2026-06-14 19:44:21 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md, 删除数量: 0
+2026-06-14 19:44:21 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/disk_high_usage.md -> 6 个分片
+2026-06-14 19:44:21 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/disk_high_usage.md -> 6 个分片
+2026-06-14 19:44:21 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 6 个文档
+2026-06-14 19:44:21 | INFO     | vector_store_manager.add_documents:70 | 批量添加 6 个文档完成, 耗时: 0.57s, 平均: 0.09s/个
+2026-06-14 19:44:21 | INFO     | vector_index_service.index_single_file:169 | 文件索引完成: uploads/disk_high_usage.md, 共 6 个分片
+2026-06-14 19:44:21 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/disk_high_usage.md
+2026-06-14 19:44:22 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/service_unavailable.md
+2026-06-14 19:44:22 | INFO     | file.upload_file:68 | 文件上传成功: uploads/service_unavailable.md
+2026-06-14 19:44:22 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/service_unavailable.md
+2026-06-14 19:44:22 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md
+2026-06-14 19:44:22 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md, 内容长度: 4052 字符
+2026-06-14 19:44:22 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md, 删除数量: 0
+2026-06-14 19:44:22 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/service_unavailable.md -> 4 个分片
+2026-06-14 19:44:22 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/service_unavailable.md -> 4 个分片
+2026-06-14 19:44:22 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 19:44:22 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.45s, 平均: 0.11s/个
+2026-06-14 19:44:22 | INFO     | vector_index_service.index_single_file:169 | 文件索引完成: uploads/service_unavailable.md, 共 4 个分片
+2026-06-14 19:44:22 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/service_unavailable.md
+2026-06-14 19:44:22 | INFO     | file.upload_file:56 | 文件已存在，将覆盖: uploads/slow_response.md
+2026-06-14 19:44:22 | INFO     | file.upload_file:68 | 文件上传成功: uploads/slow_response.md
+2026-06-14 19:44:22 | INFO     | file.upload_file:72 | 开始为上传文件创建向量索引: uploads/slow_response.md
+2026-06-14 19:44:22 | INFO     | vector_index_service.index_single_file:147 | 开始索引文件: /Users/userming/Code/OpsPilot/uploads/slow_response.md
+2026-06-14 19:44:22 | INFO     | vector_index_service.index_single_file:152 | 读取文件: /Users/userming/Code/OpsPilot/uploads/slow_response.md, 内容长度: 3631 字符
+2026-06-14 19:44:23 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: /Users/userming/Code/OpsPilot/uploads/slow_response.md, 删除数量: 0
+2026-06-14 19:44:23 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: /Users/userming/Code/OpsPilot/uploads/slow_response.md -> 4 个分片
+2026-06-14 19:44:23 | INFO     | vector_index_service.index_single_file:160 | 文档分割完成: uploads/slow_response.md -> 4 个分片
+2026-06-14 19:44:23 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 4 个文档
+2026-06-14 19:44:23 | INFO     | vector_store_manager.add_documents:70 | 批量添加 4 个文档完成, 耗时: 0.51s, 平均: 0.13s/个
+2026-06-14 19:44:23 | INFO     | vector_index_service.index_single_file:169 | 文件索引完成: uploads/slow_response.md, 共 4 个分片
+2026-06-14 19:44:23 | INFO     | file.upload_file:74 | 向量索引创建成功: uploads/slow_response.md
+2026-06-14 19:44:32 | INFO     | chat.chat:38 | [会话 search-test] 收到快速对话请求: CPU使用率过高怎么排查
+2026-06-14 19:44:32 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:44:32 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:44:32 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:44:32 | INFO     | rag_agent_service._initialize_agent:147 | 成功加载 7 个 MCP 工具
+2026-06-14 19:44:32 | INFO     | rag_agent_service._initialize_agent:162 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 19:44:32 | INFO     | rag_agent_service.query:212 | [会话 search-test] RAG Agent 收到查询（非流式）: CPU使用率过高怎么排查
+2026-06-14 19:44:34 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 19:44:44 | INFO     | rag_agent_service.query:246 | [会话 search-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:44:44 | INFO     | chat.chat:44 | [会话 search-test] 快速对话完成
+2026-06-14 19:45:00 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:45:00 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='CPU使用率过高怎么排查'
+2026-06-14 19:45:00 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:45:00 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:45:00 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:45:00 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:45:00 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:45:00 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:45:01 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 19:45:12 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:45:12 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='CPU使用率过高怎么排查'
+2026-06-14 19:45:12 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:45:12 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:45:12 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:45:12 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:45:12 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:45:12 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:45:12 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 19:45:12 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='今天天气真好'
+2026-06-14 19:45:12 | WARNING  | knowledge_tool.retrieve_knowledge:102 | L2 阈值 1.0 过滤掉了全部 9 条结果
+2026-06-14 19:50:02 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:50:03 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:50:03 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:50:21 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:50:21 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:50:21 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:50:21 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:50:21 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:50:21 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:50:21 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:50:21 | INFO     | rag_agent_service._initialize_agent:107 | 成功加载 7 个 MCP 工具
+2026-06-14 19:51:59 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:51:59 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:52:00 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:52:00 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:52:00 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:52:00 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:52:00 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:52:08 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:52:08 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:52:09 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:52:09 | INFO     | vector_index_service.__init__:65 | 向量索引服务初始化完成
+2026-06-14 19:52:09 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 19:52:09 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 19:52:09 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 19:52:09 | INFO     | main.lifespan:24 | ============================================================
+2026-06-14 19:52:09 | INFO     | main.lifespan:25 | 🚀 SuperBizAgent v1.0.0 启动中...
+2026-06-14 19:52:09 | INFO     | main.lifespan:26 | 📝 环境: 开发
+2026-06-14 19:52:09 | INFO     | main.lifespan:27 | 🌐 监听地址: http://0.0.0.0:9900
+2026-06-14 19:52:09 | INFO     | main.lifespan:28 | 📚 API 文档: http://0.0.0.0:9900/docs
+2026-06-14 19:52:09 | INFO     | main.lifespan:31 | 🔌 正在连接 Milvus...
+2026-06-14 19:52:09 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 19:52:09 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 19:52:09 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 19:52:09 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 19:52:09 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 19:52:09 | INFO     | main.lifespan:33 | ✅ Milvus 连接成功
+2026-06-14 19:52:09 | INFO     | main.lifespan:35 | ============================================================
+2026-06-14 19:52:28 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 记住：我的服务器在北京ap-beijing，项目名是OpsPilot
+2026-06-14 19:52:28 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:52:28 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:52:28 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:52:28 | INFO     | rag_agent_service._initialize_agent:107 | 成功加载 7 个 MCP 工具
+2026-06-14 19:52:28 | INFO     | rag_agent_service._initialize_agent:123 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 19:52:28 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 记住：我的服务器在北京ap-beijing，项目名是OpsPilot
+2026-06-14 19:52:29 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:52:29 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:52:29 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 我最喜欢的编程语言是Python
+2026-06-14 19:52:29 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 我最喜欢的编程语言是Python
+2026-06-14 19:52:32 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:52:32 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:52:32 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: Version 2.0需要支持K8s部署
+2026-06-14 19:52:32 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: Version 2.0需要支持K8s部署
+2026-06-14 19:52:32 | ERROR    | rag_agent_service.query:214 | [会话 ctx-test] RAG Agent 查询失败（非流式）: AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '6b5b512c-260f-98af-8e5d-a10bb31792aa'}
+  caused by: HTTPStatusError: Client error '401 Unauthorized' for url 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-14 19:52:32 | ERROR    | chat.chat:57 | 对话接口错误: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '6b5b512c-260f-98af-8e5d-a10bb31792aa'}
+2026-06-14 19:52:43 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 服务域名是ops.example.com
+2026-06-14 19:52:43 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 服务域名是ops.example.com
+2026-06-14 19:52:47 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:52:47 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:52:55 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题1：讨论一下微服务架构
+2026-06-14 19:52:55 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题1：讨论一下微服务架构
+2026-06-14 19:52:58 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='微服务架构 设计原则 优缺点 最佳实践'
+2026-06-14 19:52:58 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 19:52:58 | WARNING  | knowledge_tool.retrieve_knowledge:102 | L2 阈值 1.0 过滤掉了全部 9 条结果
+2026-06-14 19:53:08 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:53:08 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:53:09 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题2：讨论一下微服务架构
+2026-06-14 19:53:09 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题2：讨论一下微服务架构
+2026-06-14 19:53:11 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 220 字摘要, 保留 10 条
+2026-06-14 19:53:11 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:53:11 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:53:12 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.30s, 平均: 0.30s/个
+2026-06-14 19:53:12 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:53:29 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:53:29 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:53:30 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题3：讨论一下微服务架构
+2026-06-14 19:53:30 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题3：讨论一下微服务架构
+2026-06-14 19:53:34 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 242 字摘要, 保留 10 条
+2026-06-14 19:53:34 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:53:34 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:53:34 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.28s, 平均: 0.28s/个
+2026-06-14 19:53:34 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:53:56 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:53:56 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:53:58 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题4：讨论一下微服务架构
+2026-06-14 19:53:58 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题4：讨论一下微服务架构
+2026-06-14 19:54:01 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 231 字摘要, 保留 10 条
+2026-06-14 19:54:01 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:54:01 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:54:01 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.24s, 平均: 0.24s/个
+2026-06-14 19:54:01 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:54:19 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:54:19 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:54:20 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题5：讨论一下微服务架构
+2026-06-14 19:54:20 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题5：讨论一下微服务架构
+2026-06-14 19:54:24 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 247 字摘要, 保留 10 条
+2026-06-14 19:54:24 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:54:24 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:54:24 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.30s, 平均: 0.30s/个
+2026-06-14 19:54:24 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:54:24 | ERROR    | rag_agent_service.query:214 | [会话 ctx-test] RAG Agent 查询失败（非流式）: AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '78923809-2246-99a3-9ead-406e1ba7abb6'}
+  caused by: HTTPStatusError: Client error '401 Unauthorized' for url 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-14 19:54:24 | ERROR    | chat.chat:57 | 对话接口错误: Error code: 401 - {'error': {'message': 'Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code#apikey-error', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}, 'request_id': '78923809-2246-99a3-9ead-406e1ba7abb6'}
+2026-06-14 19:54:25 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题6：讨论一下微服务架构
+2026-06-14 19:54:25 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题6：讨论一下微服务架构
+2026-06-14 19:54:28 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 173 字摘要, 保留 10 条
+2026-06-14 19:54:28 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:54:28 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:54:28 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.21s, 平均: 0.21s/个
+2026-06-14 19:54:28 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:54:51 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:54:51 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:54:52 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题7：讨论一下微服务架构
+2026-06-14 19:54:52 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题7：讨论一下微服务架构
+2026-06-14 19:54:55 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 200 字摘要, 保留 10 条
+2026-06-14 19:54:55 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:54:55 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:54:55 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.26s, 平均: 0.26s/个
+2026-06-14 19:54:55 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:55:14 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:55:14 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:55:15 | INFO     | chat.chat:38 | [会话 ctx-test] 收到快速对话请求: 话题8：讨论一下微服务架构
+2026-06-14 19:55:15 | INFO     | rag_agent_service.query:173 | [会话 ctx-test] RAG Agent 收到查询（非流式）: 话题8：讨论一下微服务架构
+2026-06-14 19:55:19 | INFO     | context_manager.abefore_model:97 | [上下文] 压缩 8 条 → 241 字摘要, 保留 10 条
+2026-06-14 19:55:19 | INFO     | document_splitter_service.split_text:113 | 文本分割完成: context_summary/unknown.txt -> 1 个分片
+2026-06-14 19:55:19 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 1 个文档
+2026-06-14 19:55:19 | INFO     | vector_store_manager.add_documents:70 | 批量添加 1 个文档完成, 耗时: 0.26s, 平均: 0.26s/个
+2026-06-14 19:55:19 | INFO     | context_manager._sync_archive:150 | [上下文归档] unknown: 1 chunks
+2026-06-14 19:55:39 | INFO     | rag_agent_service.query:207 | [会话 ctx-test] RAG Agent 查询完成（非流式）
+2026-06-14 19:55:39 | INFO     | chat.chat:44 | [会话 ctx-test] 快速对话完成
+2026-06-14 19:56:01 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 19:56:01 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 19:56:01 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=True
+2026-06-14 19:56:01 | INFO     | rag_agent_service.__init__:76 | RAG Agent 服务初始化完成 (ChatQwen), model=qwen3.7-plus, streaming=False
+2026-06-14 19:56:01 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 19:56:01 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 19:56:01 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 19:56:01 | INFO     | rag_agent_service._initialize_agent:107 | 成功加载 7 个 MCP 工具
+2026-06-14 19:56:01 | INFO     | rag_agent_service._initialize_agent:123 | 可用工具列表: retrieve_knowledge, get_current_time, query_prometheus_alerts, get_current_timestamp, get_region_code_by_name, get_topic_info_by_name, search_topic_by_service_name, search_log, query_cpu_metrics, query_memory_metrics
+2026-06-14 20:09:39 | INFO     | aiops.diagnose_stream:125 | [会话 skill-demo-001] 收到 AIOps 诊断请求（流式）
+2026-06-14 20:09:39 | INFO     | aiops_service.execute:105 | [会话 skill-demo-001] 开始执行任务: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 20:09:39 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 20:09:39 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 20:09:39 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 20:09:39 | INFO     | planner.planner:74 | 用户输入: 诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过
+2026-06-14 20:09:39 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 20:09:39 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='诊断当前系统是否存在告警，如果存在告警请详细分析告警原因并生成诊断报告，诊断报告输出格式要求：
+                ```
+                # 告警分析报告
+
+                ---
+
+                ## 📋 活跃告警清单
+
+                | 告警名称 | 级别 | 目标服务 | 首次触发时间 | 最新触发时间 | 状态 |
+                |---------|------|----------|-------------|-------------|------|
+                | [告警1名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+                | [告警2名称] | [级别] | [服务名] | [时间] | [时间] | 活跃 |
+
+                ---
+
+                ## 🔍 告警根因分析1 - [告警名称]
+
+                ### 告警详情
+                - **告警级别**: [级别]
+                - **受影响服务**: [服务名]
+                - **持续时间**: [X分钟]
+
+                ### 症状描述
+                [根据监控指标描述症状]
+
+                ### 日志证据
+                [引用查询到的关键日志]
+
+                ### 根因结论
+                [基于证据得出的根本原因]
+
+                ---
+
+                ## 🛠️ 处理方案执行1 - [告警名称]
+
+                ### 已执行的排查步骤
+                1. [步骤1]
+                2. [步骤2]
+
+                ### 处理建议
+                [给出具体的处理建议]
+
+                ### 预期效果
+                [说明预期的效果]
+
+                ---
+
+                ## 🔍 告警根因分析2 - [告警名称]
+                [如果有第2个告警，重复上述格式]
+
+                ---
+
+                ## 📊 结论
+
+                ### 整体评估
+                [总结所有告警的整体情况]
+
+                ### 关键发现
+                - [发现1]
+                - [发现2]
+
+                ### 后续建议
+                1. [建议1]
+                2. [建议2]
+
+                ### 风险评估
+                [评估当前风险等级和影响范围]
+                ```
+
+                **重要提醒**：
+                - 最终输出必须是纯 Markdown 文本，不要包含 JSON 结构
+                - 所有内容必须基于工具查询的真实数据，严禁编造
+                - 如果某个步骤失败，在结论中如实说明，不要跳过'
+2026-06-14 20:09:39 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:09:39 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 2120
+2026-06-14 20:09:39 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:09:53 | INFO     | planner.planner:144 | 计划已生成，共 9 个步骤
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤1: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态及基本信息。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤2: 步骤2: 分析步骤1返回的告警数据。如果不存在活跃告警（alerts 为空或 state_counts 中 firing 为0），则直接生成无告警的诊断报告并结束任务。如果存在活跃告警，提取每个告警的名称、级别、目标服务、触发时间、持续时长等关键信息，准备进行详细分析。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤3: 步骤3: 针对每一个活跃告警，根据其类型（如 CPU、内存、响应时间等）参考知识库中的经验文档制定具体的排查策略。例如：如果是 CPU 高使用率告警，参考【参考资料 1】；如果是内存高使用率告警，参考【参考资料 3】；如果是响应时间过长，参考【参考资料 2】。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤4: 步骤4: 对于每个告警，首先使用 get_current_timestamp 获取当前时间戳，计算告警发生的时间范围（如最近30分钟或从首次触发时间开始）。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤5: 步骤5: 根据告警涉及的服务名称，使用 search_topic_by_service_name 工具查找对应的日志主题（topic_id），以便后续查询日志。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤6: 步骤6: 执行具体的指标和日志查询以收集证据：
+- 若为 CPU 告警：使用 query_cpu_metrics 查询该服务的 CPU 使用率趋势；使用 search_log 查询 system-metrics 和 application-logs 中相关的 ERROR 日志或高 CPU 进程信息。
+- 若为内存告警：使用 query_memory_metrics 查询内存使用趋势；使用 search_log 查询 OOM、GC overhead 或 OutOfMemoryError 相关日志。
+- 若为其他类型告警：根据具体情况使用 search_log 查询应用日志、系统日志或数据库慢查询日志。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤7: 步骤7: 综合步骤1至步骤6收集到的所有告警详情、监控指标数据和日志证据，对每个告警进行根因分析，确定根本原因。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤8: 步骤8: 基于根因分析结果，结合知识库中的最佳实践，为每个告警制定具体的处理建议、预期效果及已执行的排查步骤。
+2026-06-14 20:09:53 | INFO     | planner.planner:146 |   步骤9: 步骤9: 汇总所有告警的分析结果，评估整体系统风险，生成符合指定 Markdown 格式的最终诊断报告，包含活跃告警清单、每个告警的详细根因分析、处理方案以及整体结论和建议。
+2026-06-14 20:09:53 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 20:09:53 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:09:53 | INFO     | executor.executor:35 | 当前任务: 步骤1: 使用 query_prometheus_alerts 工具查询当前 Prometheus 服务端的所有活动告警，获取告警列表、状态及基本信息。
+2026-06-14 20:09:53 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:09:56 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:09:56 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:09:56 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 20:10:02 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 493
+2026-06-14 20:10:02 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:10:02 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:10:02 | INFO     | replanner.replanner:126 | 剩余计划步骤: 8
+2026-06-14 20:10:02 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 20:10:02 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:10:02 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:10:03 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 20:10:03 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 20:10:03 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 20:10:23 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 1902
+2026-06-14 20:10:23 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 20:10:23 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:10:23 | INFO     | aiops.event_generator:140 | [会话 skill-demo-001] AIOps 诊断流式响应完成
+2026-06-14 20:10:23 | INFO     | diagnosis_archiver.archive_diagnosis:133 | [归档] 开始归档诊断结果: skill-demo-001
+2026-06-14 20:10:23 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: auto_archive/skill-demo-001.md -> 6 个分片
+2026-06-14 20:10:23 | INFO     | chat.chat:38 | [会话 skill-alerts-demo] 收到快速对话请求: 查询当前Prometheus活动告警
+2026-06-14 20:10:23 | INFO     | rag_agent_service.query:173 | [会话 skill-alerts-demo] RAG Agent 收到查询（非流式）: 查询当前Prometheus活动告警
+2026-06-14 20:10:24 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: auto_archive/skill-demo-001.md, 删除数量: 0
+2026-06-14 20:10:24 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 6 个文档
+2026-06-14 20:10:24 | INFO     | vector_store_manager.add_documents:70 | 批量添加 6 个文档完成, 耗时: 0.57s, 平均: 0.09s/个
+2026-06-14 20:10:24 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:108 | [归档] 成功归档 skill-demo-001: 6 个分片
+2026-06-14 20:10:24 | INFO     | diagnosis_archiver.archive_diagnosis:148 | [归档] 归档完成: skill-demo-001, 文档长度: 4226 字符
+2026-06-14 20:10:25 | INFO     | query_metrics_alerts.query_prometheus_alerts_api:71 | Querying Prometheus alerts: http://127.0.0.1:9090/api/v1/alerts
+2026-06-14 20:10:29 | INFO     | rag_agent_service.query:207 | [会话 skill-alerts-demo] RAG Agent 查询完成（非流式）
+2026-06-14 20:10:29 | INFO     | chat.chat:44 | [会话 skill-alerts-demo] 快速对话完成
+2026-06-14 20:10:42 | INFO     | chat.chat:38 | [会话 skill-kb-demo] 收到快速对话请求: 如何排查CPU使用率过高
+2026-06-14 20:10:42 | INFO     | rag_agent_service.query:173 | [会话 skill-kb-demo] RAG Agent 收到查询（非流式）: 如何排查CPU使用率过高
+2026-06-14 20:10:48 | INFO     | rag_agent_service.query:207 | [会话 skill-kb-demo] RAG Agent 查询完成（非流式）
+2026-06-14 20:10:48 | INFO     | chat.chat:44 | [会话 skill-kb-demo] 快速对话完成
+2026-06-14 20:16:40 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 20:16:40 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 20:16:40 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 20:16:40 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 20:16:40 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 20:16:40 | INFO     | aiops_service.execute:105 | [会话 eval-cpu-spike-001] 开始执行任务: 请诊断以下问题：服务 data-sync-service 的 CPU 使用率在最近 30 分钟内从 10% 突增至 95%，触发了 HighCPUUsage 告警（级别：严重）。请分析原因并给出处理建议。
+2026-06-14 20:16:40 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 20:16:40 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 20:16:40 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 20:16:40 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 20:16:40 | INFO     | planner.planner:74 | 用户输入: 请诊断以下问题：服务 data-sync-service 的 CPU 使用率在最近 30 分钟内从 10% 突增至 95%，触发了 HighCPUUsage 告警（级别：严重）。请分析原因并给出处理建议。
+2026-06-14 20:16:40 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 20:16:40 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='请诊断以下问题：服务 data-sync-service 的 CPU 使用率在最近 30 分钟内从 10% 突增至 95%，触发了 HighCPUUsage 告警（级别：严重）。请分析原因并给出处理建议。'
+2026-06-14 20:16:40 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 20:16:41 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 20:16:41 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 20:16:41 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 20:16:41 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 20:16:41 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 20:16:41 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:16:41 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 1627
+2026-06-14 20:16:41 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 20:16:41 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 20:16:41 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:16:47 | INFO     | planner.planner:144 | 计划已生成，共 6 个步骤
+2026-06-14 20:16:47 | INFO     | planner.planner:146 |   步骤1: 步骤1: 获取当前时间戳，用于计算30分钟前的时间点作为日志和监控查询的起始时间
+2026-06-14 20:16:47 | INFO     | planner.planner:146 |   步骤2: 步骤2: 使用 search_topic_by_service_name 工具，根据服务名称 'data-sync-service' 查找对应的日志主题(topic_id)
+2026-06-14 20:16:47 | INFO     | planner.planner:146 |   步骤3: 步骤3: 使用 query_cpu_metrics 工具查询 'data-sync-service' 最近30分钟的CPU使用率详细数据，确认告警触发情况和变化趋势
+2026-06-14 20:16:47 | INFO     | planner.planner:146 |   步骤4: 步骤4: 使用 search_log 工具，基于步骤1计算的时间范围和步骤2获取的topic_id，查询该服务在最近30分钟内的应用日志，重点关注错误堆栈、慢查询记录、定时任务执行记录等异常信息
+2026-06-14 20:16:47 | INFO     | planner.planner:146 |   步骤5: 步骤5: 参考知识库中的《CPU使用率过高告警处理方案》，结合步骤3的CPU指标特征和步骤4的日志内容，分析可能的原因（死循环/流量突增/定时任务重叠/数据库慢查询）
+2026-06-14 20:16:47 | INFO     | planner.planner:146 |   步骤6: 步骤6: 根据分析结果，给出针对性的紧急处理措施和后续优化建议
+2026-06-14 20:16:47 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 20:16:47 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:16:47 | INFO     | executor.executor:35 | 当前任务: 步骤1: 获取当前时间戳，用于计算30分钟前的时间点作为日志和监控查询的起始时间
+2026-06-14 20:16:47 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:16:49 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:16:49 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:16:49 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: get_current_timestamp (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:16:49 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 get_current_timestamp 调用成功
+2026-06-14 20:16:56 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 331
+2026-06-14 20:16:56 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:16:56 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:16:56 | INFO     | replanner.replanner:126 | 剩余计划步骤: 5
+2026-06-14 20:16:56 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 20:16:56 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:16:56 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:16:58 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:16:58 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:16:58 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 5 个步骤
+2026-06-14 20:16:58 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:16:58 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:16:58 | INFO     | executor.executor:35 | 当前任务: 步骤2: 使用 search_topic_by_service_name 工具，根据服务名称 'data-sync-service' 查找对应的日志主题(topic_id)
+2026-06-14 20:16:58 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:17:02 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:17:02 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:17:02 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: search_topic_by_service_name (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:17:02 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 search_topic_by_service_name 调用成功
+2026-06-14 20:17:09 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 494
+2026-06-14 20:17:09 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:17:09 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:17:09 | INFO     | replanner.replanner:126 | 剩余计划步骤: 4
+2026-06-14 20:17:09 | INFO     | replanner.replanner:127 | 已执行步骤: 2
+2026-06-14 20:17:09 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:17:09 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:17:11 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:17:11 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:17:11 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 4 个步骤
+2026-06-14 20:17:11 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:17:11 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:17:11 | INFO     | executor.executor:35 | 当前任务: 步骤3: 使用 query_cpu_metrics 工具查询 'data-sync-service' 最近30分钟的CPU使用率详细数据，确认告警触发情况和变化趋势
+2026-06-14 20:17:11 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:17:15 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:17:15 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:17:20 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 58
+2026-06-14 20:17:20 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:17:20 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:17:20 | INFO     | replanner.replanner:126 | 剩余计划步骤: 3
+2026-06-14 20:17:20 | INFO     | replanner.replanner:127 | 已执行步骤: 3
+2026-06-14 20:17:50 | WARNING  | replanner.replanner:156 | 获取工具列表失败: unhandled errors in a TaskGroup (1 sub-exception)
+2026-06-14 20:17:50 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:17:52 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:17:52 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:17:52 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 3 个步骤
+2026-06-14 20:17:52 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:17:52 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:17:52 | INFO     | executor.executor:35 | 当前任务: 步骤4: 使用 search_log 工具，基于步骤1计算的时间范围和步骤2获取的topic_id，查询该服务在最近30分钟内的应用日志，重点关注错误堆栈、慢查询记录、定时任务执行记录等异常信息
+2026-06-14 20:17:52 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:17:59 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:17:59 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:17:59 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: get_current_timestamp (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:17:59 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 get_current_timestamp 调用成功
+2026-06-14 20:18:07 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 133
+2026-06-14 20:18:07 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:18:07 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:18:07 | INFO     | replanner.replanner:126 | 剩余计划步骤: 2
+2026-06-14 20:18:07 | INFO     | replanner.replanner:127 | 已执行步骤: 4
+2026-06-14 20:18:07 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:18:07 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:18:09 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:18:09 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:18:09 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 2 个步骤
+2026-06-14 20:18:09 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:18:09 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:18:09 | INFO     | executor.executor:35 | 当前任务: 步骤5: 参考知识库中的《CPU使用率过高告警处理方案》，结合步骤3的CPU指标特征和步骤4的日志内容，分析可能的原因（死循环/流量突增/定时任务重叠/数据库慢查询）
+2026-06-14 20:18:09 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:18:15 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:18:15 | INFO     | executor.executor:84 | 检测到 2 个工具调用
+2026-06-14 20:18:15 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='CPU使用率过高告警处理方案'
+2026-06-14 20:18:16 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:18:20 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 59
+2026-06-14 20:18:20 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:18:20 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:18:20 | INFO     | replanner.replanner:126 | 剩余计划步骤: 1
+2026-06-14 20:18:20 | INFO     | replanner.replanner:127 | 已执行步骤: 5
+2026-06-14 20:18:20 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:18:20 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:18:22 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 20:18:22 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 20:18:22 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 20:18:46 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 2348
+2026-06-14 20:18:46 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 20:18:46 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:18:46 | INFO     | aiops_service.execute:171 | [会话 eval-cpu-spike-001] 任务执行完成
+2026-06-14 20:18:46 | INFO     | diagnosis_archiver.archive_diagnosis:133 | [归档] 开始归档诊断结果: eval-cpu-spike-001
+2026-06-14 20:18:46 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: auto_archive/eval-cpu-spike-001.md -> 7 个分片
+2026-06-14 20:18:47 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: auto_archive/eval-cpu-spike-001.md, 删除数量: 0
+2026-06-14 20:18:47 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 7 个文档
+2026-06-14 20:18:47 | INFO     | vector_store_manager.add_documents:70 | 批量添加 7 个文档完成, 耗时: 0.63s, 平均: 0.09s/个
+2026-06-14 20:18:47 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:108 | [归档] 成功归档 eval-cpu-spike-001: 7 个分片
+2026-06-14 20:18:47 | INFO     | diagnosis_archiver.archive_diagnosis:148 | [归档] 归档完成: eval-cpu-spike-001, 文档长度: 4134 字符
+2026-06-14 20:18:50 | INFO     | aiops_service.execute:105 | [会话 eval-memory-leak-001] 开始执行任务: 请诊断以下问题：服务 data-sync-service 的内存使用率在过去 1 小时内从 30% 持续增长至 85%，期间服务负载无明显变化。GC 日志显示 Full GC 频率从每小时 2 次增加到每 10 分钟 1 次。请分析原因。
+2026-06-14 20:18:50 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 20:18:50 | INFO     | planner.planner:74 | 用户输入: 请诊断以下问题：服务 data-sync-service 的内存使用率在过去 1 小时内从 30% 持续增长至 85%，期间服务负载无明显变化。GC 日志显示 Full GC 频率从每小时 2 次增加到每 10 分钟 1 次。请分析原因。
+2026-06-14 20:18:50 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 20:18:50 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='请诊断以下问题：服务 data-sync-service 的内存使用率在过去 1 小时内从 30% 持续增长至 85%，期间服务负载无明显变化。GC 日志显示 Full GC 频率从每小时 2 次增加到每 10 分钟 1 次。请分析原因。'
+2026-06-14 20:18:50 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:18:50 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 1656
+2026-06-14 20:18:50 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:18:59 | INFO     | planner.planner:144 | 计划已生成，共 6 个步骤
+2026-06-14 20:18:59 | INFO     | planner.planner:146 |   步骤1: 步骤1: 使用 search_topic_by_service_name 工具，根据服务名称 'data-sync-service' 查找关联的日志主题 ID，以便后续查询日志。
+2026-06-14 20:18:59 | INFO     | planner.planner:146 |   步骤2: 步骤2: 使用 get_current_timestamp 工具获取当前时间戳，并计算 1 小时前的时间戳，确定内存增长和 GC 频率变化的具体时间窗口。
+2026-06-14 20:18:59 | INFO     | planner.planner:146 |   步骤3: 步骤3: 使用 query_memory_metrics 工具查询 'data-sync-service' 在过去 1 小时内的内存使用率监控数据，确认内存持续增长的趋势及具体数值变化。
+2026-06-14 20:18:59 | INFO     | planner.planner:146 |   步骤4: 步骤4: 使用 search_log 工具，结合步骤1获取的主题 ID 和步骤2计算的时间范围，搜索包含 'GC'、'Full GC'、'OutOfMemory'、'memory leak' 等关键词的日志，重点分析 Full GC 触发前后的日志上下文。
+2026-06-14 20:18:59 | INFO     | planner.planner:146 |   步骤5: 步骤5: 使用 retrieve_knowledge 工具检索知识库中关于 'Java 内存泄漏'、'Full GC 频繁原因'、'data-sync-service 内存问题' 的相关经验和最佳实践，辅助判断常见原因（如缓存未清理、大对象堆积、连接泄漏等）。
+2026-06-14 20:18:59 | INFO     | planner.planner:146 |   步骤6: 步骤6: 综合内存监控趋势、GC 日志特征以及知识库经验，分析导致内存持续增长和 Full GC 频率增加的根本原因（如代码层面的对象泄漏、配置不当或数据量突增），并生成诊断结论。
+2026-06-14 20:18:59 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 20:18:59 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:18:59 | INFO     | executor.executor:35 | 当前任务: 步骤1: 使用 search_topic_by_service_name 工具，根据服务名称 'data-sync-service' 查找关联的日志主题 ID，以便后续查询日志。
+2026-06-14 20:18:59 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:19:03 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:19:03 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:19:03 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: search_topic_by_service_name (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:19:03 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 search_topic_by_service_name 调用成功
+2026-06-14 20:19:11 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 493
+2026-06-14 20:19:11 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:19:11 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:19:11 | INFO     | replanner.replanner:126 | 剩余计划步骤: 5
+2026-06-14 20:19:11 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 20:19:11 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:19:11 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:19:12 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:19:12 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:19:12 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 5 个步骤
+2026-06-14 20:19:12 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:19:12 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:19:12 | INFO     | executor.executor:35 | 当前任务: 步骤2: 使用 get_current_timestamp 工具获取当前时间戳，并计算 1 小时前的时间戳，确定内存增长和 GC 频率变化的具体时间窗口。
+2026-06-14 20:19:12 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:19:15 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:19:15 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:19:15 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: get_current_timestamp (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:19:15 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 get_current_timestamp 调用成功
+2026-06-14 20:19:24 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 422
+2026-06-14 20:19:24 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:19:24 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:19:24 | INFO     | replanner.replanner:126 | 剩余计划步骤: 4
+2026-06-14 20:19:24 | INFO     | replanner.replanner:127 | 已执行步骤: 2
+2026-06-14 20:19:24 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:19:24 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:19:25 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:19:25 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:19:25 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 4 个步骤
+2026-06-14 20:19:25 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:19:25 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:19:25 | INFO     | executor.executor:35 | 当前任务: 步骤3: 使用 query_memory_metrics 工具查询 'data-sync-service' 在过去 1 小时内的内存使用率监控数据，确认内存持续增长的趋势及具体数值变化。
+2026-06-14 20:19:25 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:19:32 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:19:32 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:19:32 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: query_memory_metrics (服务器: monitor, 第 1/3 次尝试)
+2026-06-14 20:19:32 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 query_memory_metrics 调用成功
+2026-06-14 20:19:54 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 1343
+2026-06-14 20:19:54 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:19:54 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:19:54 | INFO     | replanner.replanner:126 | 剩余计划步骤: 3
+2026-06-14 20:19:54 | INFO     | replanner.replanner:127 | 已执行步骤: 3
+2026-06-14 20:19:54 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:19:54 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:19:55 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:19:55 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:19:55 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 3 个步骤
+2026-06-14 20:19:55 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:19:55 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:19:55 | INFO     | executor.executor:35 | 当前任务: 步骤4: 使用 search_log 工具，结合步骤1获取的主题 ID 和步骤2计算的时间范围，搜索包含 'GC'、'Full GC'、'OutOfMemory'、'memory leak' 等关键词的日志，重点分析 Full GC 触发前后的日志上下文。
+2026-06-14 20:19:55 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:20:02 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:20:02 | INFO     | executor.executor:84 | 检测到 2 个工具调用
+2026-06-14 20:20:02 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: get_current_timestamp (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:20:02 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: search_topic_by_service_name (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:20:02 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 get_current_timestamp 调用成功
+2026-06-14 20:20:02 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 search_topic_by_service_name 调用成功
+2026-06-14 20:20:14 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 168
+2026-06-14 20:20:14 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:20:14 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:20:14 | INFO     | replanner.replanner:126 | 剩余计划步骤: 2
+2026-06-14 20:20:14 | INFO     | replanner.replanner:127 | 已执行步骤: 4
+2026-06-14 20:20:14 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:20:14 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:20:16 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 20:20:16 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 20:20:16 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 20:20:37 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 2127
+2026-06-14 20:20:37 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 20:20:37 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:20:37 | INFO     | aiops_service.execute:171 | [会话 eval-memory-leak-001] 任务执行完成
+2026-06-14 20:20:37 | INFO     | diagnosis_archiver.archive_diagnosis:133 | [归档] 开始归档诊断结果: eval-memory-leak-001
+2026-06-14 20:20:37 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: auto_archive/eval-memory-leak-001.md -> 7 个分片
+2026-06-14 20:20:38 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: auto_archive/eval-memory-leak-001.md, 删除数量: 0
+2026-06-14 20:20:38 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 7 个文档
+2026-06-14 20:20:39 | INFO     | vector_store_manager.add_documents:70 | 批量添加 7 个文档完成, 耗时: 0.79s, 平均: 0.11s/个
+2026-06-14 20:20:39 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:108 | [归档] 成功归档 eval-memory-leak-001: 7 个分片
+2026-06-14 20:20:39 | INFO     | diagnosis_archiver.archive_diagnosis:148 | [归档] 归档完成: eval-memory-leak-001, 文档长度: 5268 字符
+2026-06-14 20:20:40 | INFO     | aiops_service.execute:105 | [会话 eval-slow-response-001] 开始执行任务: 请诊断以下问题：api-gateway-service 的 P99 响应时间从正常的 200ms 增加到 3500ms。同时段内请求量无明显变化。数据库连接池使用率从 30% 升至 95%。请分析原因。
+2026-06-14 20:20:40 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 20:20:40 | INFO     | planner.planner:74 | 用户输入: 请诊断以下问题：api-gateway-service 的 P99 响应时间从正常的 200ms 增加到 3500ms。同时段内请求量无明显变化。数据库连接池使用率从 30% 升至 95%。请分析原因。
+2026-06-14 20:20:40 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 20:20:40 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='请诊断以下问题：api-gateway-service 的 P99 响应时间从正常的 200ms 增加到 3500ms。同时段内请求量无明显变化。数据库连接池使用率从 30% 升至 95%。请分析原因。'
+2026-06-14 20:20:40 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:20:40 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 2963
+2026-06-14 20:20:40 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:20:46 | INFO     | planner.planner:144 | 计划已生成，共 7 个步骤
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤1: 步骤1: 获取当前时间戳，用于计算查询日志的时间范围（例如最近30分钟）
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤2: 步骤2: 使用 search_topic_by_service_name 工具查找 api-gateway-service 对应的日志主题ID
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤3: 步骤3: 使用 search_log 工具查询 api-gateway-service 最近的错误日志和慢请求日志，重点关注数据库相关错误、超时信息和异常堆栈
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤4: 步骤4: 使用 query_cpu_metrics 和 query_memory_metrics 工具检查 api-gateway-service 的 CPU 和内存使用情况，排除资源瓶颈
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤5: 步骤5: 使用 query_prometheus_alerts 工具检查是否有相关告警触发，如 DatabaseSlowQuery、HighCPUUsage、HighMemoryUsage 等
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤6: 步骤6: 综合分析日志中的数据库调用情况、监控指标和告警信息，结合知识库中'数据库慢查询'和'系统资源不足'的处理方案，判断是否因数据库慢查询导致连接池耗尽
+2026-06-14 20:20:46 | INFO     | planner.planner:146 |   步骤7: 步骤7: 生成诊断报告，包括问题根因分析、影响范围和推荐的处理措施
+2026-06-14 20:20:46 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 20:20:46 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:20:46 | INFO     | executor.executor:35 | 当前任务: 步骤1: 获取当前时间戳，用于计算查询日志的时间范围（例如最近30分钟）
+2026-06-14 20:20:46 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:20:48 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:20:48 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:20:48 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: get_current_timestamp (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:20:48 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 get_current_timestamp 调用成功
+2026-06-14 20:20:57 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 411
+2026-06-14 20:20:57 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:20:57 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:20:57 | INFO     | replanner.replanner:126 | 剩余计划步骤: 6
+2026-06-14 20:20:57 | INFO     | replanner.replanner:127 | 已执行步骤: 1
+2026-06-14 20:20:57 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:20:57 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:20:59 | INFO     | replanner.replanner:200 | Replanner 决策: continue
+2026-06-14 20:20:59 | INFO     | replanner.replanner:229 | 决定继续执行当前计划
+2026-06-14 20:20:59 | INFO     | aiops_service.should_continue:68 | 继续执行，剩余 6 个步骤
+2026-06-14 20:20:59 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:20:59 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:20:59 | INFO     | executor.executor:35 | 当前任务: 步骤2: 使用 search_topic_by_service_name 工具查找 api-gateway-service 对应的日志主题ID
+2026-06-14 20:20:59 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:20:59 | ERROR    | aiops_service.execute:174 | [会话 eval-slow-response-001] 任务执行失败: "'error'"
+2026-06-14 20:27:32 | INFO     | document_splitter_service.__init__:41 | 文档分割服务初始化完成, chunk_size=800, secondary_chunk_size=1600, overlap=100
+2026-06-14 20:27:32 | INFO     | vector_embedding_service.__init__:41 | DashScope Embeddings 初始化完成 - 模型: text-embedding-v4, 维度: 1024, API Key: sk-ws-H....4H2i
+2026-06-14 20:27:32 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 20:27:32 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 20:27:32 | INFO     | aiops_service.__init__:29 | Plan-Execute-Replan Service 初始化完成
+2026-06-14 20:27:32 | INFO     | aiops_service.execute:105 | [会话 eval-cpu-spike-001] 开始执行任务: 请诊断以下问题：服务 data-sync-service 的 CPU 使用率在最近 30 分钟内从 10% 突增至 95%，触发了 HighCPUUsage 告警（级别：严重）。请分析原因并给出处理建议。
+2026-06-14 20:27:32 | INFO     | checkpoint_manager.get_checkpointer:27 | AsyncSqliteSaver 初始化完成: /Users/userming/Code/OpsPilot/data/checkpoints.db
+2026-06-14 20:27:32 | INFO     | aiops_service._build_graph:40 | 构建工作流图...
+2026-06-14 20:27:32 | INFO     | aiops_service._build_graph:87 | 工作流图构建完成
+2026-06-14 20:27:32 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 20:27:32 | INFO     | planner.planner:74 | 用户输入: 请诊断以下问题：服务 data-sync-service 的 CPU 使用率在最近 30 分钟内从 10% 突增至 95%，触发了 HighCPUUsage 告警（级别：严重）。请分析原因并给出处理建议。
+2026-06-14 20:27:32 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 20:27:32 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='请诊断以下问题：服务 data-sync-service 的 CPU 使用率在最近 30 分钟内从 10% 突增至 95%，触发了 HighCPUUsage 告警（级别：严重）。请分析原因并给出处理建议。'
+2026-06-14 20:27:32 | INFO     | milvus_client.connect:77 | 正在连接到 Milvus: localhost:19530
+2026-06-14 20:27:32 | INFO     | milvus_client.connect:91 | 成功连接到 Milvus
+2026-06-14 20:27:32 | INFO     | milvus_client.connect:99 | collection 'biz' 已存在
+2026-06-14 20:27:32 | INFO     | milvus_client.connect:123 | 向量维度匹配: 1024
+2026-06-14 20:27:32 | INFO     | milvus_client._load_collection:225 | Collection 'biz' 已加载
+2026-06-14 20:27:32 | INFO     | vector_store_manager._ensure_initialized:45 | VectorStore 初始化成功: localhost:19530, collection: biz
+2026-06-14 20:27:33 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:27:33 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 1374
+2026-06-14 20:27:33 | INFO     | mcp_client.get_mcp_client:144 | 初始化全局 MCP 客户端...
+2026-06-14 20:27:33 | INFO     | mcp_client.get_mcp_client:149 | 全局 MCP 客户端初始化完成
+2026-06-14 20:27:33 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:27:40 | INFO     | planner.planner:144 | 计划已生成，共 8 个步骤
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤1: 步骤1: 获取当前时间戳，用于计算30分钟前的起始时间点
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤2: 步骤2: 使用 query_cpu_metrics 工具查询 data-sync-service 服务最近30分钟的CPU使用率监控数据，确认告警现象和趋势
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤3: 步骤3: 使用 query_prometheus_alerts 工具查询当前活动的告警信息，确认 HighCPUUsage 告警的详细信息（如持续时间、标签等）
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤4: 步骤4: 使用 search_topic_by_service_name 工具根据服务名称 'data-sync-service' 查找对应的日志主题(topic_id)
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤5: 步骤5: 使用 get_current_timestamp 工具再次获取当前时间戳（如果步骤1的时间戳已过时），并计算30分钟前的时间戳作为 start_time
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤6: 步骤6: 使用 search_log 工具查询 data-sync-service 在最近30分钟内的日志，重点关注错误日志、异常堆栈、定时任务执行记录、重试日志等
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤7: 步骤7: 参考知识库中的经验文档（eval-cpu-spike-001.md），结合CPU监控数据和日志分析结果，从以下四个方面进行原因排查：
+  - 定时任务重叠或并发失控
+  - 数据量突增导致的处理瓶颈
+  - 代码层面的死循环或低效算法
+  - 外部依赖响应超时引发的重试风暴
+2026-06-14 20:27:40 | INFO     | planner.planner:146 |   步骤8: 步骤8: 综合分析所有收集到的信息，确定最可能的根本原因，并给出相应的处理建议
+2026-06-14 20:27:40 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 20:27:40 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:27:40 | INFO     | executor.executor:35 | 当前任务: 步骤1: 获取当前时间戳，用于计算30分钟前的起始时间点
+2026-06-14 20:27:40 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:27:44 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:27:44 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:27:44 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: get_current_timestamp (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:27:44 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 get_current_timestamp 调用成功
+2026-06-14 20:27:51 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 223
+2026-06-14 20:27:51 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:27:51 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:27:51 | INFO     | replanner.replanner:126 | 剩余计划步骤: 7
+2026-06-14 20:27:51 | INFO     | replanner.replanner:127 | 已执行步骤: 6
+2026-06-14 20:27:51 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:27:51 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:27:55 | INFO     | replanner.replanner:200 | Replanner 决策: replan
+2026-06-14 20:27:55 | WARNING  | replanner.replanner:217 | 已执行 6 个步骤，禁止重新规划，强制生成响应
+2026-06-14 20:27:55 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 20:28:18 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 2390
+2026-06-14 20:28:18 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 20:28:18 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:28:18 | INFO     | aiops_service.execute:171 | [会话 eval-cpu-spike-001] 任务执行完成
+2026-06-14 20:28:18 | INFO     | diagnosis_archiver.archive_diagnosis:133 | [归档] 开始归档诊断结果: eval-cpu-spike-001
+2026-06-14 20:28:18 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: auto_archive/eval-cpu-spike-001.md -> 6 个分片
+2026-06-14 20:28:19 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: auto_archive/eval-cpu-spike-001.md, 删除数量: 7
+2026-06-14 20:28:19 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:104 | [归档] 已删除 eval-cpu-spike-001 的旧归档 (7 条)
+2026-06-14 20:28:19 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 6 个文档
+2026-06-14 20:28:19 | INFO     | vector_store_manager.add_documents:70 | 批量添加 6 个文档完成, 耗时: 0.70s, 平均: 0.12s/个
+2026-06-14 20:28:19 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:108 | [归档] 成功归档 eval-cpu-spike-001: 6 个分片
+2026-06-14 20:28:19 | INFO     | diagnosis_archiver.archive_diagnosis:148 | [归档] 归档完成: eval-cpu-spike-001, 文档长度: 4441 字符
+2026-06-14 20:28:21 | INFO     | aiops_service.execute:105 | [会话 eval-memory-leak-001] 开始执行任务: 请诊断以下问题：服务 data-sync-service 的内存使用率在过去 1 小时内从 30% 持续增长至 85%，期间服务负载无明显变化。GC 日志显示 Full GC 频率从每小时 2 次增加到每 10 分钟 1 次。请分析原因。
+2026-06-14 20:28:21 | INFO     | planner.planner:71 | === Planner：制定执行计划 ===
+2026-06-14 20:28:21 | INFO     | planner.planner:74 | 用户输入: 请诊断以下问题：服务 data-sync-service 的内存使用率在过去 1 小时内从 30% 持续增长至 85%，期间服务负载无明显变化。GC 日志显示 Full GC 频率从每小时 2 次增加到每 10 分钟 1 次。请分析原因。
+2026-06-14 20:28:21 | INFO     | planner.planner:78 | 查询内部文档，寻找相关经验...
+2026-06-14 20:28:21 | INFO     | knowledge_tool.retrieve_knowledge:67 | 知识检索工具被调用: query='请诊断以下问题：服务 data-sync-service 的内存使用率在过去 1 小时内从 30% 持续增长至 85%，期间服务负载无明显变化。GC 日志显示 Full GC 频率从每小时 2 次增加到每 10 分钟 1 次。请分析原因。'
+2026-06-14 20:28:21 | INFO     | knowledge_tool.retrieve_knowledge:107 | 检索: 候选 9 → 过滤 0 → 时间衰减排序 → 返回 3
+2026-06-14 20:28:21 | INFO     | planner.planner:86 | 找到相关经验文档，长度: 2941
+2026-06-14 20:28:21 | INFO     | planner.planner:102 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:28:27 | INFO     | planner.planner:144 | 计划已生成，共 6 个步骤
+2026-06-14 20:28:27 | INFO     | planner.planner:146 |   步骤1: 步骤1: 使用 search_topic_by_service_name 工具，根据服务名称 'data-sync-service' 搜索相关的日志主题信息，获取 topic_id
+2026-06-14 20:28:27 | INFO     | planner.planner:146 |   步骤2: 步骤2: 使用 get_current_timestamp 工具获取当前时间戳（毫秒），用于计算查询时间范围
+2026-06-14 20:28:27 | INFO     | planner.planner:146 |   步骤3: 步骤3: 基于当前时间戳计算 1 小时前的起始时间戳（start_time = current_timestamp - 60 * 60 * 1000）
+2026-06-14 20:28:27 | INFO     | planner.planner:146 |   步骤4: 步骤4: 使用 query_memory_metrics 工具查询 data-sync-service 过去 1 小时的内存使用率监控数据，验证内存增长趋势
+2026-06-14 20:28:27 | INFO     | planner.planner:146 |   步骤5: 步骤5: 使用 search_log 工具，结合步骤1获取的 topic_id 和步骤3计算的时间范围，搜索包含 'GC'、'Full GC'、'OutOfMemory'、'memory leak' 等关键词的日志，分析 Full GC 触发情况
+2026-06-14 20:28:27 | INFO     | planner.planner:146 |   步骤6: 步骤6: 综合内存监控数据和日志分析结果，参考知识库中的诊断经验（eval-memory-leak-001.md），判断是否存在内存泄漏并给出诊断结论和建议
+2026-06-14 20:28:27 | INFO     | aiops_service.execute:132 | 节点 'planner' 输出事件
+2026-06-14 20:28:27 | INFO     | executor.executor:24 | === Executor：执行步骤 ===
+2026-06-14 20:28:27 | INFO     | executor.executor:35 | 当前任务: 步骤1: 使用 search_topic_by_service_name 工具，根据服务名称 'data-sync-service' 搜索相关的日志主题信息，获取 topic_id
+2026-06-14 20:28:27 | INFO     | executor.executor:44 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:28:31 | INFO     | executor.executor:80 | LLM 响应类型: <class 'langchain_core.messages.ai.AIMessage'>
+2026-06-14 20:28:31 | INFO     | executor.executor:84 | 检测到 1 个工具调用
+2026-06-14 20:28:31 | INFO     | mcp_client.retry_interceptor:76 | 调用 MCP 工具: search_topic_by_service_name (服务器: cls, 第 1/3 次尝试)
+2026-06-14 20:28:31 | INFO     | mcp_client.retry_interceptor:81 | MCP 工具 search_topic_by_service_name 调用成功
+2026-06-14 20:28:32 | INFO     | executor.executor:99 | 步骤执行完成，结果长度: 0
+2026-06-14 20:28:32 | INFO     | aiops_service.execute:132 | 节点 'executor' 输出事件
+2026-06-14 20:28:32 | INFO     | replanner.replanner:120 | === Replanner：重新规划 ===
+2026-06-14 20:28:32 | INFO     | replanner.replanner:126 | 剩余计划步骤: 5
+2026-06-14 20:28:32 | INFO     | replanner.replanner:127 | 已执行步骤: 5
+2026-06-14 20:28:32 | INFO     | replanner.replanner:151 | 可用工具数量: 本地 3 + MCP 7
+2026-06-14 20:28:32 | INFO     | replanner.replanner:174 | 还有剩余计划，评估下一步行动
+2026-06-14 20:28:33 | INFO     | replanner.replanner:200 | Replanner 决策: respond
+2026-06-14 20:28:33 | INFO     | replanner.replanner:203 | 决定生成最终响应
+2026-06-14 20:28:33 | INFO     | replanner._generate_response:244 | 生成最终响应...
+2026-06-14 20:28:55 | INFO     | replanner._generate_response:273 | 最终响应生成完成，长度: 2082
+2026-06-14 20:28:55 | INFO     | aiops_service.should_continue:64 | 已生成最终响应，结束流程
+2026-06-14 20:28:55 | INFO     | aiops_service.execute:132 | 节点 'replanner' 输出事件
+2026-06-14 20:28:55 | INFO     | aiops_service.execute:171 | [会话 eval-memory-leak-001] 任务执行完成
+2026-06-14 20:28:55 | INFO     | diagnosis_archiver.archive_diagnosis:133 | [归档] 开始归档诊断结果: eval-memory-leak-001
+2026-06-14 20:28:55 | INFO     | document_splitter_service.split_markdown:78 | Markdown 分割完成: auto_archive/eval-memory-leak-001.md -> 8 个分片
+2026-06-14 20:28:55 | INFO     | vector_store_manager.delete_by_source:83 | 删除文件旧数据: auto_archive/eval-memory-leak-001.md, 删除数量: 7
+2026-06-14 20:28:55 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:104 | [归档] 已删除 eval-memory-leak-001 的旧归档 (7 条)
+2026-06-14 20:28:55 | INFO     | vector_embedding_service.embed_documents:64 | 批量嵌入 8 个文档
+2026-06-14 20:28:56 | INFO     | vector_store_manager.add_documents:70 | 批量添加 8 个文档完成, 耗时: 0.82s, 平均: 0.10s/个
+2026-06-14 20:28:56 | INFO     | diagnosis_archiver.write_archive_to_vectorstore:108 | [归档] 成功归档 eval-memory-leak-001: 8 个分片
+2026-06-14 20:28:56 | INFO     | diagnosis_archiver.archive_diagnosis:148 | [归档] 归档完成: eval-memory-leak-001, 文档长度: 5327 字符
