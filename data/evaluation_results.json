@@ -1,0 +1,30 @@
+{
+  "evaluation_time": "2026-06-14T20:28:57.724563",
+  "model": "qwen3.7-plus",
+  "scenarios": [
+    {
+      "id": "cpu-spike-001",
+      "title": "CPU 使用率突增至 95%",
+      "root_cause_accuracy": 60,
+      "step_reasonableness": 85,
+      "solution_feasibility": 80,
+      "overall": 75,
+      "errors": []
+    },
+    {
+      "id": "memory-leak-001",
+      "title": "data-sync-service 内存持续增长",
+      "root_cause_accuracy": 95,
+      "step_reasonableness": 92,
+      "solution_feasibility": 95,
+      "overall": 94,
+      "errors": []
+    }
+  ],
+  "averages": {
+    "root_cause_accuracy": 77,
+    "step_reasonableness": 88,
+    "solution_feasibility": 87,
+    "overall": 84
+  }
+}
